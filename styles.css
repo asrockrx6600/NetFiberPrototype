@@ -1,0 +1,250 @@
+@import "tailwindcss";
+
+* {
+
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #F0B100;
+    --secundary: #ffffff;
+    --bg-nav: rgba(23, 23, 23, 0.9);
+    --black: #000000;
+    --scrollbar: #D6D6D6;
+}
+
+::selection {
+    background: var(--black);
+    color: var(--primary);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(214, 214, 214);
+}
+
+.navbar {
+    background: var(--bg-nav);
+    backdrop-filter: blur(10px);
+    color: var(--secundary);
+}
+
+.logo h2 {
+    color: var(--primary);
+}
+
+.tnfiber-mobile {
+    display: none;
+}
+
+.logo-text {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.logo-text h2 span {
+    color: var(--primary);
+    border-top: 2px solid var(--secundary);
+    border-left: 2px solid var(--secundary);
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+}
+
+.nav-options a {
+    display: inline-block;
+    position: relative;
+    transition: color 300ms ease-in-out;
+}
+
+.nav-options a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--secundary);
+    transition: 300ms ease-in-out;
+}
+
+.nav-options a:hover::after {
+    width: 100%;
+}
+
+.nav-options a:hover {
+    color: white;
+}
+
+.vantagens div:hover {
+    transform: translateY(-4px);
+}
+
+.fibra-optica-C2-plan {
+    background: var(--bg-nav);
+    overflow: hidden;
+    position: relative;
+}
+
+.fibra-optica-C2-plan:hover {
+    transform: scale(1.03);
+}
+
+.span-one {
+    background: var(--primary);
+}
+
+.button-one:hover, .button-two:hover {
+    color: var(--primary);
+    background: var(--black);
+}
+
+.plan-one:hover {
+    transform: translateY(-10px);
+}
+
+.contact-grid {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.contact button:hover {
+    color: var(--black);
+    background: var(--primary);
+}
+
+.about {
+    width: 80%;
+}
+
+.fibra-optica,
+.escolha-planos,
+.plans-grid
+.justify,
+.contact,
+.footer {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 600ms ease-in-out;
+}
+
+.fibra-optica,
+.escolha-planos.active,
+.plans-grid.active,
+.justify.active,
+.contact.active,
+.footer.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.burguer {
+    background: var(--scrollbar-hover);
+    width:44px;
+    cursor: pointer;
+}
+
+.burguer span {
+    width: 100%;
+    height: 4px;
+    background: var(--primary);
+}
+
+
+
+
+.carrossel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .5rem 1rem;
+    width: 100%;
+    overflow: visible;
+}
+
+.plans-grid {
+    display: flex;
+    gap: 2rem;
+    width: 95%;
+    margin: 1rem auto;
+    padding: 1rem;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+
+}
+
+.carrossel::-webkit-scrollbar {
+    display: none;
+}
+
+.prev, .next {
+    font-size: 38px;
+    color: var(--primary);
+    background: transparent;
+    cursor: pointer;
+}
+
+.plan-one {
+    flex: 0 0 355px;
+    scroll-snap-align: start;
+    min-width: 320px;
+}
+
+.plan-one button {
+    border: 1px solid transparent;
+}
+
+.plan-one button:hover {
+    border-color: var(--black);
+    transform: scale(1.02);
+}
+
+.fiber {
+    opacity: 0;
+}
+
+.class-brands i:hover {
+    transform: scale(1.05);
+}
+
+.warningMsg.active {
+    opacity: 1;
+}
+
+textarea {
+    resize: none;
+}
+
+@media (max-width: 768px) {
+    .plans-grid {
+        width: 100%;
+    }
+
+    .plan-one {
+    flex: 0 0 265px;
+    min-width: 220px;
+}
+
+    .tnfiber-mobile {
+        display: flex;
+    }
+}
