@@ -345,12 +345,16 @@ body {
     color: var(--icon-vantag-hover);
 }
 
-.plan-one button {
-    border: 1px solid transparent;
+.plan-one a {
+    text-align: center;
+    text-decoration: none;
+    color: #fdc700;
+    background: #000000;
+    transition: background 300ms ease, transform 300ms ease;
 }
 
-.plan-one button:hover {
-    border-color: var(--black);
+.plan-one a:hover {
+    background: #222222;
     transform: scale(1.02);
 }
 
