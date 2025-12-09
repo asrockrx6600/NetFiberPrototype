@@ -15,6 +15,9 @@
     <!-- Tailwind -->
     <link rel="stylesheet" href="./output.css">
 
+    <!-- Icon -->
+    <link rel="shortcut icon" href="tnfiber.png" type="image/x-icon">
+
     <script src="payment.js" defer></script>
 
     <link rel="stylesheet" href="paymentStyles.css">
@@ -23,74 +26,63 @@
 </head>
 <body>
     <main>
-
         <form>
             <div class="flex w-full h-screen md:h-[120vh] bg-yellow-400">
-                <div
-                    class="flex flex-col gap-6 w-[90%] md:w-[40%] p-4 m-auto border bg-neutral-800 text-neutral-200 border-neutral-800 rounded-lg shadow-sm shadow-black">
-        
-                    <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-6 w-[90%] md:w-[40%] py-8 px-4 m-auto border bg-neutral-800 text-neutral-200 border-neutral-800 rounded-lg shadow-sm shadow-black">
+    
+                    <div class="flex flex-col gap-2.5">
                         <h1 class="text-3xl font-bold">Finalizar pedido</h1>
-                        <input
-                            type="text"
-                            id="planoEscolhido"
-                            class="text-sm text-yellow-400 font-bold border rounded-sm py-1 px-4 select-none" readonly>
+                        <input type="text" id="planoEscolhido"
+                               class="text-sm text-yellow-400 font-bold border rounded-sm py-1 px-4 select-none" readonly>
                     </div>
-        
-                    <div class="flex flex-col gap-4">
-                        <label>Nome no cartão</label>
+    
+                    <div class="flex flex-col gap-2.5">
+                        <label class="text-sm">Nome no cartão</label>
                         <input type="text" placeholder="Ex: João Silva"
-                            class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-yellow-400 placeholder:text-neutral-400">
-        
-                        <label>E-mail</label>
+                               class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-yellow-400 placeholder:text-neutral-400">
+    
+                        <label class="text-sm">E-mail</label>
                         <input type="text" placeholder="Ex: joao@gmail.com"
-                            class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-yellow-400 placeholder:text-neutral-400">
-        
+                               class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-yellow-400 placeholder:text-neutral-400">
+    
                         <p class="text-xs text-neutral-400">Enviaremos o recibo para este e-mail.</p>
-        
-                        <label>Número do cartão</label>
+    
+                        <label class="text-sm">Número do cartão</label>
                         <input type="text" maxlength="19" placeholder="1234 5678 9012 3456"
-                            class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-yellow-400 placeholder:text-neutral-400"
-                            id="cardNumber">
+                               class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-yellow-400 placeholder:text-neutral-400"
+                               id="cardNumber">
                     </div>
-        
+    
                     <div>
-                        <div class="grid grid-cols-2 gap-12">
-        
+                        <div class="grid grid-cols-2 gap-12 items-center">
+    
                             <div class="flex flex-col gap-1.5">
-                                <label>Validade (MM/AA)</label>
-                                <input
-                                    type="text"
-                                    maxlength="5"
-                                    placeholder="09/32"
+                                <label class="text-sm">Validade (MM/AA)</label>
+                                <input type="text" maxlength="5" placeholder="09/32"
                                     class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-yellow-400 placeholder:text-neutral-400"
                                     id="validate">
                             </div>
-        
+    
                             <div class="flex flex-col gap-1.5">
-                                <label>CVC</label>
-                                <input
-                                    type="text"
-                                    maxlength="3"
-                                    placeholder="123"
+                                <label class="text-sm">CVC</label>
+                                <input type="text" maxlength="3" placeholder="123"
                                     class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-yellow-400 placeholder:text-neutral-400">
                             </div>
                         </div>
                     </div>
-        
-                    <div class="flex w-full mt-12">
-                        <button
-                            type="submit"
-                            class="w-[40%] m-auto text-lg text-black font-bold py-2 bg-yellow-400 rounded-lg cursor-pointer">
-                            Pagar
+    
+                    <div class="flex w-full mt-4">
+                        <button type="submit"
+                                class="w-full py-2 text-lg text-black bg-yellow-400 font-bold rounded-lg cursor-pointer transition-transform duration-200">
+                                Confirmar Compra
                         </button>
                     </div>
-        
+    
                     <div class="flex items-center gap-2 select-none">
-                        <p class="flex justify-center text-xs text-green-700">Nós usamos criptografia e não armazenamos dados reais nesta demo.</p>
+                        <p class="flex justify-center text-[8px] md:text-xs text-green-700">Nós usamos criptografia e não armazenamos dados reais nesta demo.</p>
                         <i class="fa-solid fa-lock text-xs text-green-700"></i>
                     </div>
-        
+    
                 </div>
             </div>
         </form>

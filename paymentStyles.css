@@ -24,3 +24,7 @@ input:focus {
     outline: none;
     border-color: #FDC700;
 }
+
+button:hover {
+    transform: scale(1.02);
+}
