@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Página de Pagamento</title>
+  <style>
+    :root{
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --accent:#0066ff;
+      --muted:#7b8794;
+      --success:#16a34a;
+      --danger:#ef4444;
+      --glass: rgba(255,255,255,0.6);
+      font-size:16px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,var(--bg), #e9eef6 120%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:2rem;
+      color:#111827;
+    }
+
+    .container{
+      width:100%;
+      max-width:980px;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:2rem;
+      align-items:start;
+    }
+
+    /* Mobile first: stack columns */
+    @media (max-width:880px){
+      .container{grid-template-columns:1fr;}
+    }
+
+    .panel{
+      background:var(--card);
+      border-radius:14px;
+      padding:1.6rem;
+      box-shadow: 0 8px 24px rgba(16,24,40,0.08);
+      border:1px solid rgba(15,23,42,0.04);
+    }
+
+    .left h1{margin:0 0 .6rem 0;font-size:1.4rem}
+    .left p{margin:0 0 1.2rem;color:var(--muted)}
+
+    form{display:grid;gap:1rem}
+
+    .field{display:flex;flex-direction:column;gap:.4rem}
+    label{font-size:.85rem;color:var(--muted)}
+    input,select{height:44px;padding:.6rem .8rem;border-radius:10px;border:1px solid rgba(15,23,42,0.06);background:linear-gradient(180deg,white, #fbfdff);outline:none;font-size:1rem}
+    input:focus{box-shadow:0 4px 18px rgba(2,6,23,0.08);border-color:var(--accent)}
+
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem}
+
+    /* Card preview */
+    .card-preview{
+      padding:1rem;
+      border-radius:12px;
+      background: linear-gradient(135deg,#0b3cff,#4fb3ff);
+      color:white;
+      min-height:200px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      box-shadow: 0 10px 30px rgba(11,60,255,0.18);
+    }
+    .chip{width:52px;height:36px;border-radius:6px;background:rgba(255,255,255,0.85);display:inline-block}
+    .card-number{font-size:1.15rem;letter-spacing:2px;margin-top:1rem}
+    .card-row{display:flex;justify-content:space-between;align-items:center}
+    .brand{font-weight:700}
+
+    .right{display:flex;flex-direction:column;gap:1rem}
+
+    .summary{display:flex;flex-direction:column;gap:.6rem}
+    .price{font-size:1.6rem;font-weight:700}
+    .muted{color:var(--muted);font-size:.95rem}
+
+    button.pay{
+      appearance:none;border:0;padding:.9rem 1rem;border-radius:10px;background:var(--accent);color:white;font-weight:700;font-size:1rem;cursor:pointer;box-shadow:0 8px 20px rgba(2,6,23,0.12);
+    }
+    button.pay:disabled{opacity:.6;cursor:not-allowed}
+
+    .helper{font-size:.86rem;color:var(--muted)}
+
+    .msg{padding:.8rem;border-radius:8px;font-weight:600}
+    .msg.success{background:rgba(22,163,74,0.08);color:var(--success);border:1px solid rgba(22,163,74,0.12)}
+    .msg.error{background:rgba(239,68,68,0.06);color:var(--danger);border:1px solid rgba(239,68,68,0.08)}
+
+    footer.note{margin-top:1rem;color:var(--muted);font-size:.86rem}
+
+    /* small touches */
+    .brand-row{display:flex;align-items:center;gap:.6rem}
+    .small{font-size:.9rem;color:#fff;opacity:.9}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="panel left">
+      <h1>Pagar Pedido</h1>
+      <p>Preencha os dados abaixo para finalizar o pagamento. Esta é uma demonstração — não envie informações reais.</p>
+
+      <form id="paymentForm" novalidate>
+        <div class="field">
+          <label for="name">Nome no cartão</label>
+          <input id="name" name="name" type="text" placeholder="Ex.: Maria Silva" required />
+        </div>
+
+        <div class="field">
+          <label for="email">E‑mail</label>
+          <input id="email" name="email" type="email" placeholder="voce@exemplo.com" required />
+          <div class="helper">Enviaremos o recibo para este e‑mail.</div>
+        </div>
+
+        <div class="field">
+          <label for="cardNumber">Número do cartão</label>
+          <input id="cardNumber" name="cardNumber" inputmode="numeric" autocomplete="cc-number" maxlength="19" placeholder="1234 5678 9012 3456" required />
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="expiry">Validade (MM/AA)</label>
+            <input id="expiry" name="expiry" inputmode="numeric" maxlength="5" placeholder="09/28" required />
+          </div>
+          <div class="field">
+            <label for="cvc">CVC</label>
+            <input id="cvc" name="cvc" inputmode="numeric" maxlength="4" placeholder="123" required />
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="amount">Valor (R$)</label>
+            <input id="amount" name="amount" type="number" step="0.01" min="0.01" value="99.90" required />
+          </div>
+          <div class="field">
+            <label for="installments">Parcelas</label>
+            <select id="installments" name="installments">
+              <option value="1">1x sem juros</option>
+              <option value="2">2x</option>
+              <option value="3">3x</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:.8rem;align-items:center;margin-top:6px">
+          <input id="save" type="checkbox" /> <label for="save">Salvar cartão como método de pagamento</label>
+        </div>
+
+        <div style="margin-top:1rem;display:flex;gap:.8rem;align-items:center;justify-content:space-between">
+          <div class="helper">Transação segura — test only</div>
+          <button class="pay" id="payBtn" type="submit">Pagar agora</button>
+        </div>
+
+        <div id="formMessage" style="margin-top:1rem"></div>
+      </form>
+
+      <footer class="note">Nós usamos criptografia TLS e não armazenamos dados reais nesta demo.</footer>
+    </section>
+
+    <aside class="panel right">
+      <div class="card-preview" aria-hidden="true">
+        <div class="card-row">
+          <div class="chip"></div>
+          <div class="brand">VISA</div>
+        </div>
+
+        <div>
+          <div class="card-number" id="previewNumber">1234 5678 9012 3456</div>
+          <div style="display:flex;justify-content:space-between;margin-top:.8rem;align-items:center">
+            <div class="small" id="previewName">NOME SOBRENOME</div>
+            <div class="small" id="previewExp">09/28</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:1rem">
+        <div class="summary">
+          <div class="muted">Resumo do pedido</div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">Assinatura Pro</div>
+              <div class="muted">1 mês — Acesso completo</div>
+            </div>
+            <div class="price" id="summaryPrice">R$ 99,90</div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.6rem">
+            <div class="muted">Taxa</div>
+            <div class="muted">R$ 0,00</div>
+          </div>
+
+          <hr style="border:0;border-top:1px solid rgba(15,23,42,0.04);margin:0.6rem 0">
+
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="font-weight:700">Total</div>
+            <div class="price" id="totalPrice">R$ 99,90</div>
+          </div>
+        </div>
+
+        <div style="margin-top:1rem">
+          <div class="muted">Formas de pagamento aceitas</div>
+          <div style="display:flex;gap:.5rem;margin-top:.6rem;align-items:center">
+            <div style="width:44px;height:28px;background:#eee;border-radius:6px"></div>
+            <div style="width:44px;height:28px;background:#eee;border-radius:6px"></div>
+            <div style="width:44px;height:28px;background:#eee;border-radius:6px"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </aside>
+  </div>
+
+  <script>
+    // Form behavior: format card number and expiry, live preview, simple validation
+    const cardNumber = document.getElementById('cardNumber');
+    const expiry = document.getElementById('expiry');
+    const cvc = document.getElementById('cvc');
+    const nameInput = document.getElementById('name');
+    const amount = document.getElementById('amount');
+    const payBtn = document.getElementById('payBtn');
+    const previewNumber = document.getElementById('previewNumber');
+    const previewName = document.getElementById('previewName');
+    const previewExp = document.getElementById('previewExp');
+    const totalPrice = document.getElementById('totalPrice');
+    const summaryPrice = document.getElementById('summaryPrice');
+    const formMessage = document.getElementById('formMessage');
+
+    function formatCardNumber(v){
+      return v.replace(/\D/g,'').replace(/(.{4})/g,'$1 ').trim();
+    }
+
+    function formatExpiry(v){
+      const digits = v.replace(/\D/g,'').slice(0,4);
+      if(digits.length<3) return digits;
+      return digits.slice(0,2) + '/' + digits.slice(2);
+    }
+
+    cardNumber.addEventListener('input',(e)=>{
+      const formatted = formatCardNumber(e.target.value);
+      e.target.value = formatted;
+      previewNumber.textContent = formatted || '1234 5678 9012 3456';
+    });
+
+    expiry.addEventListener('input',(e)=>{
+      const formatted = formatExpiry(e.target.value);
+      e.target.value = formatted;
+      previewExp.textContent = formatted || '09/28';
+    });
+
+    nameInput.addEventListener('input', (e)=>{
+      previewName.textContent = (e.target.value || 'NOME SOBRENOME').toUpperCase();
+    });
+
+    amount.addEventListener('input',(e)=>{
+      const val = parseFloat(e.target.value) || 0;
+      const text = val.toFixed(2).replace('.',',');
+      summaryPrice.textContent = `R$ ${text}`;
+      totalPrice.textContent = `R$ ${text}`;
+    });
+
+    // Basic Luhn check (not perfect, but illustrative)
+    function luhnCheck(num){
+      const digits = num.replace(/\D/g,'');
+      let sum=0, flip=false;
+      for(let i=digits.length-1;i>=0;i--){
+        let n = parseInt(digits[i],10);
+        if(flip){n*=2;if(n>9)n-=9}
+        sum+=n;flip=!flip;
+      }
+      return digits.length>12 && (sum%10===0);
+    }
+
+    function showMessage(text,type='success'){
+      formMessage.innerHTML = `<div class="msg ${type}">${text}</div>`;
+    }
+
+    document.getElementById('paymentForm').addEventListener('submit',(e)=>{
+      e.preventDefault();
+      formMessage.innerHTML = '';
+
+      const nm = nameInput.value.trim();
+      const mail = document.getElementById('email').value.trim();
+      const card = cardNumber.value.trim();
+      const exp = expiry.value.trim();
+      const c = cvc.value.trim();
+      const val = parseFloat(amount.value);
+
+      if(!nm || !mail || !card || !exp || !c || !val){
+        showMessage('Preencha todos os campos obrigatórios.','error');
+        return;
+      }
+
+      if(!luhnCheck(card)){
+        showMessage('Número de cartão inválido (Luhn).','error');
+        return;
+      }
+
+      // Expiry rudimentar: MM/YY and in the future
+      const parts = exp.split('/');
+      if(parts.length!==2){ showMessage('Validade inválida.','error'); return; }
+      const mm = parseInt(parts[0],10);
+      const yy = parseInt(parts[1],10) + 2000;
+      const now = new Date();
+      const expDate = new Date(yy, mm-1, 1);
+      if(!(mm>=1 && mm<=12) || expDate < new Date(now.getFullYear(), now.getMonth(), 1)){
+        showMessage('Cartão vencido ou validade inválida.','error');
+        return;
+      }
+
+      showMessage('Pagamento processado (simulado). Obrigado!','success');
+      payBtn.disabled = true;
+
+      // Simula limpeza ou next steps
+      setTimeout(()=>{
+        payBtn.disabled = false;
+        // Em app real: enviar para backend / gateway
+      }, 1800);
+    });
+  </script>
+</body>
+</html>

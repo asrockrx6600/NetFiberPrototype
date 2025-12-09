@@ -17,6 +17,14 @@
 
     --tn-fiber: #fdc700;
     --burguer: #fdc700;
+    --container-C2: #222222;
+    --container-C2-txt: #fdc700;
+    --plans: #e5e5e5;
+    --span-plan-bg: #fdc700;
+    --span-plan-txt: #000000;
+    --plan-value: #c11007;
+    --icon-vantag: #fdc700;
+    --icon-vantag-hover:#016630;
     --contact: #f5f5f5;
     --contact-btn: #000000;
     --contact-txt: #fdc700;
@@ -35,6 +43,14 @@
 
     --tn-fiber: #fdc700;
     --burguer: #e5e5e5;
+    --container-C2: #ffc800dd;
+    --container-C2-txt: #111111;
+    --plans: #fdc700;
+    --span-plan-bg: #c10007;
+    --span-plan-txt: #e5e5e5;
+    --plan-value: #c10007;
+    --icon-vantag: #c10007;
+    --icon-vantag-hover: #016630;
     --contact: #1c1c1c;
     --contact-btn: #fdc700;
     --contact-txt: #000000;
@@ -187,25 +203,25 @@ body {
     transform: translateY(-4px);
 }
 
-.fibra-optica-C2-plan:hover {
-    transform: scale(1.03);
-}
-
 .escolha-planos h2, .escolha-planos p {
     color: var(--black);
 }
 
+.fibra-optica-C2-plan {
+    background: var(--container-C2);
+}
+
+.fibra-optica-C2-plan:hover {
+    transform: scale(1.03);
+}
+
 .fibra-optica-C2-plan h3, .fibra-optica-C2-plan span, .fibra-optica-C2-plan p {
-    color: var(--secundary);
+    color: var(--container-C2-txt);
 }
 
 .plan-one:hover {
     transform: translateY(-10px);
 }
-
-
-
-
 
 .fibra-optica,
 .escolha-planos,
@@ -284,15 +300,7 @@ body {
     visibility: visible;
 }
 
-
 .plans-grid {
-    /* display: flex;
-    gap: 2rem;
-    width: 95%;
-    margin: 1rem auto;
-    padding: 1rem;
-    overflow-x: auto;
-    overflow-y: visible; */
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     scroll-behavior: smooth;
@@ -317,6 +325,26 @@ body {
     flex: 0 0 360px;
     scroll-snap-align: center;
     min-width: 300px;
+    background: var(--plans);
+}
+
+.plan-value {
+    color: var(--plan-value);
+}
+
+.span-plan {
+    background: var(--span-plan-bg);
+    color: var(--span-plan-txt);
+}
+
+.icon-check {}
+
+.icon-vantages {
+    color: var(--icon-vantag);
+}
+
+.icon-vantages:hover {
+    color: var(--icon-vantag-hover);
 }
 
 .plan-one button {
