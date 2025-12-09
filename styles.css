@@ -1,16 +1,44 @@
 @import "tailwindcss";
 
 * {
-
     box-sizing: border-box;
 }
 
-:root {
-    --primary: #F0B100;
-    --secundary: #ffffff;
-    --bg-nav: rgba(23, 23, 23, 0.9);
+:root[data-theme="light"] {
+    --primary: #FDC700;
+    --secundary: #fdc700;
+    --body: #fdc700;
+    --bg-nav: rgba(0, 0, 0, 0.9);
     --black: #000000;
-    --scrollbar: #D6D6D6;
+    --prev-next: #C10007;
+    --scrollbar-track: #FDC700;
+
+    --scrollbar-thumb: #e5e5e5;
+
+    --tn-fiber: #fdc700;
+    --burguer: #fdc700;
+    --contact: #f5f5f5;
+    --contact-btn: #000000;
+    --contact-txt: #fdc700;
+    --white: #e5e5e5;
+}
+
+:root[data-theme="dark"] {
+    --primary: #e5e5e5;
+    --secundary: #e5e5e5;
+    --body: #212426;
+    --bg-nav: rgba(0,0,0,0.9);
+    --black: #d4d4d4;
+    --prev-next: #fdc700;
+
+    --scrollbar-thumb: #e5e5e5;
+
+    --tn-fiber: #fdc700;
+    --burguer: #e5e5e5;
+    --contact: #1c1c1c;
+    --contact-btn: #fdc700;
+    --contact-txt: #000000;
+    --white: #e5e5e5;
 }
 
 ::selection {
@@ -23,11 +51,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--primary);
+    background: var(--scrollbar-thumb);
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--scrollbar);
+    background: var(--scrollbar-track);
 }
 
 html {
@@ -36,13 +64,14 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: rgb(214, 214, 214);
+    background: var(--body);
+    transition: background 300ms ease-in-out;
 }
 
 .navbar {
     background: var(--bg-nav);
     backdrop-filter: blur(10px);
-    color: var(--secundary);
+    border-radius: 0 0 5px 0;
 }
 
 .logo h2 {
@@ -61,16 +90,16 @@ body {
 }
 
 .logo-text h2 span {
-    color: var(--primary);
-    border-top: 2px solid var(--secundary);
-    border-left: 2px solid var(--secundary);
-    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+    border-top: 2px solid var(--tn-fiber);
+    border-left: 2px solid var(--tn-fiber);
 }
 
-.nav-options a {
-    display: inline-block;
-    position: relative;
-    transition: color 300ms ease-in-out;
+.logo-text h2 {
+    color: var(--tn-fiber);
+}
+
+.tnfiber-mobile h2, .tnfiber-mobile span {
+    color: var(--tn-fiber);
 }
 
 .nav-options a::after {
@@ -80,8 +109,8 @@ body {
     left: 0;
     width: 0%;
     height: 2px;
-    background: var(--secundary);
-    transition: 300ms ease-in-out;
+    background: var(--white);
+    transition: all 300ms ease-in-out;
 }
 
 .nav-options a:hover::after {
@@ -89,103 +118,181 @@ body {
 }
 
 .nav-options a:hover {
-    color: white;
+    transform: scale(1.05);
+}
+
+.client-aria:hover {
+    transform: scale(1.05);
+}
+
+.btn-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 1.4rem;
+    background: #4e4e4e;
+    border: none;
+    position: relative;
+    transition: background 300ms;
+}
+
+.circle {
+    width: 1.2rem;
+    height: 1.2rem;
+    background: #fdc700;
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    transition: transform 300ms;
+}
+
+[data-theme="dark"] .btn-toggle .circle {
+    transform: translateX(25px);
+}
+
+.icon {
+    font-size: 1rem;
+    pointer-events: none;
+    transition: opacity 200ms;
+}
+
+.sun {
+    color: #FDC700;
+    opacity: 0;
+}
+
+.moon {
+    color: #0053b8;
+    opacity: 1;
+}
+
+[data-theme="dark"] .sun {
+    opacity: 1;
+}
+
+[data-theme="dark"] .moon {
+    opacity: 0;
+}
+
+[data-theme="dark"] .circle {
+    background: #e5e5e5;
+}
+
+.fibra-optica-C1 h1, .fibra-optica-C1 p {
+    color: var(--black);
 }
 
 .vantagens div:hover {
     transform: translateY(-4px);
 }
 
-.fibra-optica-C2-plan {
-    background: var(--bg-nav);
-    overflow: hidden;
-    position: relative;
-}
-
 .fibra-optica-C2-plan:hover {
     transform: scale(1.03);
 }
 
-.span-one {
-    background: var(--primary);
+.escolha-planos h2, .escolha-planos p {
+    color: var(--black);
 }
 
-.button-one:hover, .button-two:hover {
-    color: var(--primary);
-    background: var(--black);
+.fibra-optica-C2-plan h3, .fibra-optica-C2-plan span, .fibra-optica-C2-plan p {
+    color: var(--secundary);
 }
 
 .plan-one:hover {
     transform: translateY(-10px);
 }
 
-.contact-grid {
-    width: 80%;
-    margin: 0 auto;
-}
 
-.contact button:hover {
-    color: var(--black);
-    background: var(--primary);
-}
 
-.about {
-    width: 80%;
-}
+
 
 .fibra-optica,
 .escolha-planos,
 .plans-grid
 .justify,
-.contact,
-.footer {
+.contact {
     opacity: 0;
     transform: translateY(40px);
-    transition: 600ms ease-in-out;
+    transition: opacity 600ms ease-in-out, transform 600ms ease-in-out;
 }
 
 .fibra-optica,
 .escolha-planos.active,
 .plans-grid.active,
 .justify.active,
-.contact.active,
-.footer.active {
+.contact.active {
     opacity: 1;
     transform: translateY(0);
 }
 
 .burguer {
-    background: var(--scrollbar-hover);
-    width:44px;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    gap: .2rem;
+    width:28px;
+    height: 21px;
     cursor: pointer;
 }
 
 .burguer span {
     width: 100%;
     height: 4px;
-    background: var(--primary);
+    border-radius: 10px;
+    background: var(--burguer);
+    transition: transform 300ms ease, opacity 100ms ease;
 }
 
+.burguer.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
 
+.burguer.active span:nth-child(2) {
+    opacity: 0;
+}
 
+.burguer.active span:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
+}
 
-.carrossel {
+.nav-options-mobile {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
     gap: 1rem;
-    padding: .5rem 1rem;
-    width: 100%;
-    overflow: visible;
+    width: 50%;
+    height: 30vh;
+    border-radius: 0 0 0 5px;
+    position: absolute;
+    top: 96px;
+    right: 0;
+    background: #000000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(150%);
+    transition: transform 400ms ease-in-out, opacity 600ms ease-in-out;
 }
 
-.plans-grid {
+.nav-options-mobile.active {
     display: flex;
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+}
+
+
+.plans-grid {
+    /* display: flex;
     gap: 2rem;
     width: 95%;
     margin: 1rem auto;
     padding: 1rem;
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: visible; */
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     scroll-behavior: smooth;
@@ -197,16 +304,19 @@ body {
 }
 
 .prev, .next {
-    font-size: 38px;
-    color: var(--primary);
+    color: var(--prev-next);
     background: transparent;
-    cursor: pointer;
+    transition: transform 200ms ease-in-out;
+}
+
+.prev:hover, .next:hover {
+    transform: scale(1.05);
 }
 
 .plan-one {
-    flex: 0 0 355px;
-    scroll-snap-align: start;
-    min-width: 320px;
+    flex: 0 0 360px;
+    scroll-snap-align: center;
+    min-width: 300px;
 }
 
 .plan-one button {
@@ -218,8 +328,26 @@ body {
     transform: scale(1.02);
 }
 
-.fiber {
-    opacity: 0;
+.about {
+    color: var(--black);
+    background: var(--contact);
+}
+
+.contact-grid {
+    background: var(--contact);
+}
+
+.c-grid-one h2, .c-grid-one p {
+    color: var(--black);
+}
+
+.submit {
+    color: var(--contact-txt);
+    background: var(--contact-btn);
+}
+
+.submit:hover {
+    transform: scale(1.04);
 }
 
 .class-brands i:hover {
@@ -235,14 +363,24 @@ textarea {
 }
 
 @media (max-width: 768px) {
+
+    .navbar {
+        border-radius: 0;
+    }
+
+    .burguer {
+        display: flex;
+    }
+
     .plans-grid {
         width: 100%;
     }
 
     .plan-one {
-    flex: 0 0 265px;
-    min-width: 220px;
-}
+    flex: 0 0 245px;
+    min-width: 200px;
+    scroll-snap-align: center;
+    }
 
     .tnfiber-mobile {
         display: flex;

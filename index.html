@@ -17,7 +17,11 @@
 
     <link rel="shortcut icon" href="tnfiber.png" type="image/x-icon">
 
+    <script src="script.js" defer></script>
+    <script src="theme.js" defer></script>
+    <script src="menuBurguer.js" defer></script>
     <script src="sendForm.js" defer></script>
+    <script src="socialMedias.js" defer></script>
 
     <title>TN Fiber</title>
 </head>
@@ -25,14 +29,14 @@
 <body class="pt-44 md:pt-48">
     <header>
         <nav>
-            <div class="navbar flex justify-center md:justify-between items-center py-0 px-12 h-24 fixed top-0 min-w-full z-50">
+            <div class="navbar flex justify-center md:justify-between items-center py-0 px-6 md:px-8 h-24 fixed top-0 min-w-full z-50">
                 <div class="logo">
                     <div class="logo-img flex items-center gap-4" onclick="location.href='#'">
                         <img src="tnfiber.png"
                              alt="TN Fiber"
                              class="w-14 h-14 cursor-pointer">
 
-                            <div class="tnfiber-mobile flex w-full text-xl font-bold">
+                            <div class="tnfiber-mobile flex w-full text-lg font-bold">
                                 <h2><span>TN</span> Fiber</h2>
                             </div>
                              
@@ -43,49 +47,78 @@
                     </div>
                 </div>
 
-                
+                <div class="nav-options hidden items-center gap-10 font-semibold text-xl text-yellow-500 hover:text-yellow-400 md:flex">
+                    <a href="#plans" class="inline-block relative transition-all duration-300 ease-in-out">Planos</a>
+                    <a href="#about" class="inline-block relative transition-all duration-300 ease-in-out">Sobre a gente</a>
+                    <a href="#contact" class="inline-block relative transition-all duration-300 ease-in-out">Contato</a>
+                </div>
 
-                    <div class="nav-options hidden items-center gap-10 font-semibold text-yellow-500 md:flex">
-                        <a href="#plans">Planos</a>
-                        <a href="#about">Sobre a gente</a>
-                        <a href="#contact">Contato</a>
-                    </div>
+                <div class="contract hidden md:flex md:justify-center md:items-center md:flex-row-reverse md:gap-4">
+                    <button class="client-aria text-lg text-neutral-200 font-bold py-1 px-3 bg-red-700 hover:bg-red-600 border border-neutral-200 rounded-sm cursor-pointer transition-all duration-300 ease-in-out">
+                        Área do cliente
+                    </button>
 
-                    <div class="contract hidden relative md:flex">
-                        <button class="text-lg text-black font-bold py-1 px-3 bg-yellow-500 rounded-sm cursor-pointer transition-all duration-300 ease-in-out">
-                            <span class="text-">Contratar</span>
+                    <div class="theme">
+                        <button class="btn-toggle py-1 px-3 rounded-lg" id="theme">
+                            <span class="circle"></span>
+
+                            <div class="flex gap-1.5">
+                                <span class="icon sun fa-solid fa-sun"></span>
+                                <span class="icon moon fa-solid fa-moon"></span>
+                            </div>
                         </button>
                     </div>
+                </div>
 
-                    <!-- <div class=" burguer">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div> -->
+                <div class="nav-options-mobile font-semibold text-xl text-yellow-500 hover:text-yellow-400" id="menu">
+                
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-col gap-4">
+                            <a href="#plans" class="inline-block relative transition-all duration-300 ease-in-out text-lg">Planos</a>
+                            <a href="#about" class="inline-block relative transition-all duration-300 ease-in-out text-lg">Sobre a
+                                gente</a>
+                            <a href="#contact" class="inline-block relative transition-all duration-300 ease-in-out text-lg">Contato</a>
+                        </div>
+                
+                        <div class="contract flex items-center gap-4 flex-col md: md:hidden">
+                            <button
+                                class="text-sm text-neutral-200 font-bold py-1 px-3 bg-red-700 hover:bg-red-600 border border-neutral-200 rounded-sm cursor-pointer transition-all duration-300 ease-in-out">
+                                Área do cliente
+                            </button>
+                
+                            <div class="theme">
+                                <button class="btn-toggle py-1 px-3 rounded-lg" id="themeMobile">
+                                    <span class="circle"></span>
+                
+                                    <div class="flex gap-1.5">
+                                        <span class="icon sun fa-solid fa-sun"></span>
+                                        <span class="icon moon fa-solid fa-moon"></span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    <button class="flex md:hidden text-3xl" id="hamburguer">
-                        ☰
-                    </button>
-                    
-                    <!-- <div class="hidden nav-options flex items-center gap-10 font-semibold">
-                        <a href="#plans">Planos</a>
-                        <a href="#about">Sobre a gente</a>
-                        <a href="#contact">Contato</a>
-                    </div> -->
+                <div class="burguer" id="hamburguer">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
     <main>
         <div class="fibra-optica grid grid-cols-1 w-[90%] gap-12 m-auto md:grid-cols-2">
 
             <div class="fibra-optica-C1 flex flex-col gap-4 w-full">
-                <span class="span-one py-1 px-2 text-xs font-medium rounded-2xl m-auto w-fit cursor-default select-none md:m-0">Fibra Óptica <i class="fa-regular fa-circle-check"></i></span>
-                <h1 class="text-center text-5xl font-bold cursor-default md:text-left md:text-5xl">Qualidade que você sente no dia a dia!</h1>
+                <span class="span-one py-1 px-2 text-xs font-bold rounded-2xl m-auto w-fit text-neutral-100 bg-red-700 select-none md:m-0">Internet Fibra Óptica <i class="fa-solid fa-wifi"></i></span>
+                <h1 class="text-center text-4xl font-bold cursor-default md:text-left md:text-5xl">Qualidade que você sente no dia a dia!</h1>
                 <p class="flex justify-center text-lg text-center w-full md:w-4/5 md:text-left md:justify-start cursor-default">Planos com latência baixa, instalação rápida e suporte 24h. Faça streaming, jogue e trabalhe sem travamentos.</p>
 
-                <div class="vantagens md:flex justify-center gap-4 mt-4 mb-10 hidden">
+                <div class="vantagens md:flex justify-start gap-4 mt-4 mb-10 hidden">
                     <div class="flex text-sm bg-black text-yellow-500 p-1.5 rounded-sm shadow-xs shadow-black transition duration-300 cursor-default select-none">
                         <h3><i class="fa-solid fa-headphones"></i> Suporte 24h</h3>
                         
@@ -103,7 +136,7 @@
             </div>
 
             <div class="fibra-optica-C2 flex items-center">
-                <div class="fibra-optica-C2-plan flex flex-row items-center w-full p-4 rounded-2xl mb-12 text-yellow-500 cursor-default shadow-sm shadow-neutral-900 transition transform duration-500 ease-in-out md:justify-between select-none">
+                <div class="fibra-optica-C2-plan flex flex-row items-center w-full p-4 rounded-2xl mb-12 bg-black cursor-default shadow-sm shadow-neutral-900 transition transform duration-500 ease-in-out md:justify-between select-none">
 
                     <div class="flex flex-col gap-4 w-full text-lg">
                         <h3 class="text-sm md:text-lg">Velocidade média</h3>
@@ -124,96 +157,109 @@
     </main>
 
     <section>
-        <div class="planos flex flex-col justify-center items-center w-[90%] scroll-mt-32 mt-12 mx-auto" id="plans">
+        <div class="planos flex flex-col justify-center items-center w-[90%] scroll-mt-52 md:scroll-mt-28 mt-20 md:mt-24 mx-auto" id="plans">
         
             <div class="escolha-planos flex justify-between flex-col w-full gap-4 md:flex-row md:w-full">
                 <div>
                     <h2 class="text-center md:text-left text-4xl font-bold">Escolha seu plano</h2>
-                    <p class="text-center md:text-left text-lg text-gray-600">Planos mensais sem surpresas</p>
+                    <p class="text-center md:text-left text-lg">Planos mensais sem surpresas</p>
                 </div>
             </div>
         </div>
 
-        <div class="carrossel m-0">
+        <div class="carrossel flex items-center gap-4 w-full py-2 px-4 overflow-visible mb-24 md:m-0">
 
-            <button class="prev"><i class="fa-solid fa-circle-arrow-left"></i></button>
+            <button class="prev text-4xl cursor-pointer"><i class="fa-solid fa-circle-arrow-left"></i></button>
 
-            <!-- <div class="plans-grid grid grid-cols-1 gap-6 w-4/5 m-auto md:grid-cols-3"> -->
-            <div class="plans-grid">
+            <div class="plans-grid flex gap-4 w-[95%] m-auto p-4 overflow-x-auto overflow-y-visible">
 
-                <div class="plan-one flex flex-col gap-4 p-4 rounded-xl bg-neutral-100 shadow-sm shadow-neutral-400 transition duration-300 cursor-default select-none">
-                    <span class="font-bold w-fit py-1.5 px-4 bg-black text-white rounded-xl cursor-default">Essencial</span>
-                    <h3 class="font-bold text-4xl text-yellow-500">100 MEGAS</h3>
+                <div class="plan-one flex flex-col gap-4 p-4 rounded-xl bg-neutral-100 shadow-sm shadow-black transition duration-300 cursor-default select-none">
+                    <div class="flex justify-between">
+                        <span class="font-bold w-fit py-1.5 px-4 bg-black text-white rounded-xl cursor-default">Essencial</span>
+                        <i class="fa-solid fa-circle-check text-xs h-fit hover:text-green-800" title="Selo de Qualidade TN Fiber!"></i>
+                    </div>
+                    <h3 class="font-bold text-4xl md:text-5xl text-yellow-500">100 MEGAS</h3>
                     <h4 class="text-xl text-black font-bold">R$ 60<span class="text-xs text-black">/mês</span></h4>
     
-                    <p><i class="fa-solid fa-comments text-yellow-500"></i> Navegação</p>
-                    <p><i class="fa-brands fa-whatsapp text-yellow-500"></i> Redes sociais</p>
-                    <p><i class="fa-solid fa-wifi text-yellow-500"></i> Conexão 24h</p>
+                    <p><i class="fa-solid fa-location-arrow hover:text-green-800 text-yellow-500"></i> Navegação</p>
+                    <p><i class="fa-brands fa-whatsapp hover:text-green-800 text-yellow-500"></i> Redes sociais</p>
+                    <p><i class="fa-solid fa-wifi hover:text-green-800 text-yellow-500"></i> Conexão 24h</p>
     
                     <button class="hover:text-black hover:bg-yellow-500 w-2/4 bg-black text-white font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer transition duration-300 ease-in-out">Contratar</button>
                 </div>
     
-                <div class="plan-one flex flex-col gap-4 p-4 border border-yellow-500 rounded-xl bg-neutral-100 shadow-sm shadow-neutral-400 transition duration-300 cursor-default select-none">
-                    <span class="font-semibold w-fit py-1.5 px-4 bg-red-600 rounded-xl text-white cursor-default">Recomendado <i class="fa-solid fa-fire"></i></span>
-                    <h3 class="font-bold text-4xl text-yellow-500">300 MEGAS</h3>
+                <div class="plan-one flex flex-col gap-4 p-4 border-2 border-red-700 rounded-xl bg-neutral-100 shadow-sm shadow-red-700 transition-transform duration-300 cursor-default select-none">
+                    <div class="flex justify-between">
+                        <span class="font-semibold w-fit py-1.5 px-4 bg-red-700 rounded-xl text-white cursor-default">Recomendado <i class="fa-solid fa-fire"></i></span>
+                        <i class="fa-solid fa-circle-check text-xs h-fit hover:text-green-800" title="Selo de Qualidade TN Fiber!"></i>
+                    </div>
+                    <h3 class="font-bold text-4xl md:text-5xl text-yellow-500">300 MEGAS</h3>
                     <h4 class="text-xl text-black font-bold">R$ 99,90<span class="text-xs text-black">/mês</span></h4>
     
-                    <p><i class="fa-solid fa-mobile text-yellow-500"></i> Multidispositivos</p>
-                    <p><i class="fa-solid fa-circle-check text-yellow-500"></i> Instalação inclusa*</p>
-                    <p><i class="fa-solid fa-wifi text-yellow-500"></i> Conexão 24h</p>
+                    <p><i class="fa-solid fa-mobile-screen hover:text-green-800 text-yellow-500"></i> Multidispositivos</p>
+                    <p><i class="fa-solid fa-circle-check hover:text-green-800 text-yellow-500"></i> Instalação inclusa*</p>
+                    <p><i class="fa-solid fa-wifi hover:text-green-800 text-yellow-500"></i> Conexão 24h</p>
     
                     <button class="hover:text-black hover:bg-yellow-500 w-2/4 bg-black text-white font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer transition duration-300">Contratar</button>
                 </div>
     
-    
-                <div class="plan-one flex flex-col gap-4 p-4 rounded-xl bg-neutral-100 shadow-sm shadow-neutral-400 transition duration-300 cursor-default select-none">
-                    <span class="font-bold w-fit py-1.5 px-4 bg-black text-white rounded-xl cursor-default">Popular</span>
-                    <h3 class="font-bold text-4xl text-yellow-500">500 MEGAS</h3>
+                <div class="plan-one flex flex-col gap-4 p-4 rounded-xl bg-neutral-100 shadow-sm shadow-black transition-transform duration-300 cursor-default select-none">
+                    <div class="flex justify-between">
+                        <span class="font-bold w-fit py-1.5 px-4 bg-black text-white rounded-xl cursor-default">Popular</span>
+                        <i class="fa-solid fa-circle-check text-xs h-fit hover:text-green-800" title="Selo de Qualidade TN Fiber!"></i>
+                    </div>
+                    <h3 class="font-bold text-4xl md:text-5xl text-yellow-500">500 MEGAS</h3>
                     <h4 class="text-xl text-black font-bold">R$ 139,90<span class="text-xs text-black">/mês</span></h4>
     
-                    <p><i class="fa-solid fa-mobile text-yellow-500"></i> Multidispositivos</p>
-                    <p><i class="fa-solid fa-circle-check text-yellow-500"></i> Instalação inclusa*</p>
-                    <p><i class="fa-solid fa-wifi text-yellow-500"></i> Conexão 24h</p>
+                    <p><i class="fa-solid fa-mobile-screen hover:text-green-800 text-yellow-500"></i> Multidispositivos</p>
+                    <p><i class="fa-solid fa-circle-check hover:text-green-800 text-yellow-500"></i> Instalação inclusa*</p>
+                    <p><i class="fa-solid fa-wifi hover:text-green-800 text-yellow-500"></i> Conexão 24h</p>
     
                     <button class="hover:text-black hover:bg-yellow-500 w-2/4 bg-black text-white font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer transition duration-300">Contratar</button>
                 </div>
 
-                <div class="plan-one flex flex-col gap-4 p-4 rounded-xl bg-neutral-100 shadow-sm shadow-neutral-400 transition duration-300 cursor-default select-none">
-                    <span class="font-bold w-fit py-1.5 px-4 bg-black text-white rounded-xl cursor-default">Essencial</span>
-                    <h3 class="font-bold text-4xl text-yellow-500">150 MEGAS</h3>
+                <div class="plan-one flex flex-col gap-4 p-4 rounded-xl bg-neutral-100 shadow-sm shadow-black transition-transform duration-300 cursor-default select-none">
+                    <div class="flex justify-between">
+                        <span class="font-bold w-fit py-1.5 px-4 bg-black text-white rounded-xl cursor-default">Essencial</span>
+                        <i class="fa-solid fa-circle-check text-xs h-fit hover:text-green-800" title="Selo de Qualidade TN Fiber!"></i>
+                    </div>
+                    <h3 class="font-bold text-4xl md:text-5xl text-yellow-500">150 MEGAS</h3>
                     <h4 class="text-xl text-black font-bold">R$ 70<span class="text-xs text-black">/mês</span></h4>
     
-                    <p><i class="fa-solid fa-comments text-yellow-500"></i> Navegação e redes sociais</p>
-                    <p><i class="fa-solid fa-circle-check text-yellow-500"></i> Instalação inclusa*</p>
-                    <p><i class="fa-solid fa-wifi text-yellow-500"></i> Conexão 24h</p>
+                    <p><i class="fa-solid fa-comments hover:text-green-800 text-yellow-500"></i> Navegação e redes sociais</p>
+                    <p><i class="fa-solid fa-circle-check hover:text-green-800 text-yellow-500"></i> Instalação inclusa*</p>
+                    <p><i class="fa-solid fa-wifi hover:text-green-800 text-yellow-500"></i> Conexão 24h</p>
     
                     <button class="hover:text-black hover:bg-yellow-500 w-2/4 bg-black text-white font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer transition duration-300 ease-in-out">Contratar</button>
                 </div>
     
-                <div class="plan-one flex flex-col gap-4 p-4 border border-yellow-500 rounded-xl bg-neutral-100 shadow-sm shadow-neutral-400 transition duration-300 cursor-default select-none">
-                    <span class="font-semibold w-fit py-1.5 px-4 bg-red-600 rounded-xl text-white cursor-default">Custo benefício <i class="fa-solid fa-fire"></i></span>
-                    <h3 class="font-bold text-4xl text-yellow-500">200 MEGAS</h3>
+                <div class="plan-one flex flex-col gap-4 p-4 border border-yellow-500 rounded-xl bg-neutral-100 shadow-sm shadow-black transition-transform duration-300 cursor-default select-none">
+                    <div class="flex justify-between">
+                        <span class="font-semibold w-fit py-1.5 px-4 bg-red-700 rounded-xl text-white cursor-default">Custo benefício <i class="fa-solid fa-fire"></i></span>
+                        <i class="fa-solid fa-circle-check text-xs h-fit hover:text-green-800" title="Selo de Qualidade TN Fiber!"></i>
+                    </div>
+                    <h3 class="font-bold text-4xl md:text-5xl text-yellow-500">200 MEGAS</h3>
                     <h4 class="text-xl text-black font-bold">R$ 79,90<span class="text-xs text-black">/mês</span></h4>
     
-                    <p><i class="fa-solid fa-mobile text-yellow-500"></i> Multidispositivos</p>
-                    <p><i class="fa-solid fa-circle-check text-yellow-500"></i> Instalação inclusa*</p>
-                    <p><i class="fa-solid fa-wifi text-yellow-500"></i> Conexão 24h</p>
+                    <p><i class="fa-solid fa-mobile-screen hover:text-green-800 text-yellow-500"></i> Multidispositivos</p>
+                    <p><i class="fa-solid fa-circle-check hover:text-green-800 text-yellow-500"></i> Instalação inclusa*</p>
+                    <p><i class="fa-solid fa-wifi hover:text-green-800 text-yellow-500"></i> Conexão 24h</p>
     
                     <button class="hover:text-black hover:bg-yellow-500 w-2/4 bg-black text-white font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer transition duration-300">Contratar</button>
                 </div>
     
     
-                <div class="plan-one flex flex-col gap-4 p-4 rounded-xl bg-neutral-100 shadow-sm shadow-neutral-400 transition duration-300 cursor-default select-none">
+                <div class="plan-one flex flex-col gap-4 p-4 rounded-xl bg-neutral-100 shadow-sm shadow-black transition-transform duration-300 cursor-default select-none">
                     <div class="flex justify-between">
-                        <span class="font-bold w-fit py-1.5 px-4 bg-black text-white rounded-xl cursor-default">PRO</span>
-                        <i class="fa-solid fa-circle-check cursor-pointer h-fit hover:text-yellow-500" title="Ideal para Transferência de dados"></i>
+                        <span class="font-bold w-fit py-1.5 px-4 bg-black text-white rounded-xl cursor-default">Empresarial</span>
+                        <i class="fa-solid fa-circle-check hover:text-green-800 text-xs h-fit" title="Selo de Qualidade TN Fiber!"></i>
                     </div>
-                    <h3 class="font-bold text-4xl text-yellow-500">600 MEGAS</h3>
+                    <h3 class="font-bold text-4xl md:text-5xl text-yellow-500">600 MEGAS</h3>
                     <h4 class="text-xl text-black font-bold">R$ 169,90<span class="text-xs text-black">/mês</span></h4>
     
-                    <p><i class="fa-solid fa-mobile text-yellow-500"></i> Multidispositivos</p>
-                    <p><i class="fa-solid fa-circle-check text-yellow-500"></i> Instalação inclusa*</p>
-                    <p><i class="fa-solid fa-wifi text-yellow-500"></i> Conexão 24h</p>
+                    <p><i class="fa-solid fa-mobile-screen hover:text-green-800 text-yellow-500"></i> Multidispositivos</p>
+                    <p><i class="fa-solid fa-circle-check hover:text-green-800 text-yellow-500"></i> Instalação inclusa*</p>
+                    <p><i class="fa-solid fa-wifi hover:text-green-800 text-yellow-500"></i> Conexão 24h</p>
     
                     <button
                         class="hover:text-black hover:bg-yellow-500 w-2/4 bg-black text-white font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer transition duration-300">
@@ -221,25 +267,24 @@
                     </button>
                 </div>
             </div>
-            
-            <button class="next"><i class="fa-solid fa-circle-arrow-right"></i></button>
 
+            <button class="next text-4xl cursor-pointer"><i class="fa-solid fa-circle-arrow-right"></i></button>
         </div>
 
-        <div class="justify scroll-mt-54" id="about">
-            <div class="about flex justify-center items-center flex-col gap-10 my-24 m-auto md:my-36">
-                <h2 class="text-center font-bold text-4xl">Por que escolher a <span class="text-yellow-500">TN Fiber</span>?</h2>
-                <p class="text-center text-xl">Na <span class="font-bold">TN Fiber</span>, a sua conexão vai além da internet. Entregamos <span class="underline">velocidade</span> real, com estabilidade até nos horários de pico, para que você possa trabalhar, estudar, assistir e jogar sem interrupções. Nosso atendimento é rápido, humano e próximo de você, garantindo suporte sempre que precisar. Escolha quem realmente se importa com a sua experiência e conecta você ao que mais importa!</p>
+        <div class="justify scroll-mt-48 mb-36 md:mb-16 md:mt-24" id="about">
+            <div class="about flex justify-center items-center flex-col gap-10 w-[80%] p-4 m-auto bg-neutral-100 shadow-sm shadow-black rounded-2xl md:py-20">
+                <h2 class="text-center font-bold text-3xl md:text-4xl">Por que escolher a <span class="text-yellow-500">TN Fiber</span>?</h2>
+                <p class="text-justify md:text-center text-sm md:text-xl">Na <span class="font-bold">TN Fiber</span>, a sua conexão vai além da internet. Entregamos <span class="underline">velocidade</span> real, com estabilidade até nos horários de pico, para que você possa trabalhar, estudar, assistir e jogar sem interrupções. Nosso atendimento é rápido, humano e próximo de você, garantindo suporte sempre que precisar. Escolha quem realmente se importa com a sua experiência e conecta você ao que mais importa!</p>
             </div>
         </div>
 
-        <div class="contact max-w-full scroll-mt-44" id="contact">
-            <div class="contact-grid grid grid-cols-1 pt-8 md:grid-cols-2 bg-neutral-100 rounded-2xl shadow-sm shadow-neutral-400">
+        <div class="contact max-w-full scroll-mt-44 md:mt-30" id="contact">
+            <div class="contact-grid grid grid-cols-1 pt-4 md:pt-8 md:grid-cols-2 w-[80%] m-auto bg-neutral-100 rounded-2xl shadow-sm shadow-black">
 
                 <div class="c-grid-one flex flex-col gap-4 py-10 px-4 md:py-24">
-                    <h2 class="font-bold text-2xl text-center cursor-default">Fale com a <span class="text-yellow-500">TN Fiber</span></h2>
-                    <p class=" text-center cursor-default m-auto md:w-[85%]">Preencha o formulário e um de nossos atendentes entrará em contato.</p>
-                    <span class="text-xs font-semibold bg-green-900 text-white py-1.5 px-5 rounded-3xl w-fit m-auto select-none md:text-base">Atendimento humanizado <i class="fa-regular fa-heart text-white"></i></span>
+                    <h2 class="font-bold text-2xl text-center cursor-default md:text-4xl">Fale com a <span class="text-yellow-500">TN Fiber</span></h2>
+                    <p class=" text-center cursor-default m-auto md:w-[75%]">Preencha o formulário e entre em contato com a gente.</p>
+                    <span class="text-xs font-semibold bg-green-900 text-white py-1 px-3 rounded-3xl w-fit m-auto select-none">Atendimento humanizado <i class="fa-solid fa-hand-holding-hand text-white"></i></span>
                 </div>
 
                 <div class="c-grid-two flex justify-center flex-col gap-6 px-4 md:px-4" id="form1">
@@ -250,44 +295,35 @@
                             id="name"
                             placeholder="Nome" 
                             maxlength="15"
-                            class="w-full shadow-sm shadow-neutral-300 rounded-sm py-1.5 px-3 bg-white outline-none placeholder:text-gray-500 placeholder:text-sm text-yellow-500" required>
+                            class="w-full shadow-sm shadow-neutral-300 rounded-sm py-1.5 px-3 bg-white outline-none placeholder:text-gray-500 placeholder:text-sm" required>
 
                         <input
                             type="text"
                             title="ex: Santos"
-                            id="tel" 
+                            id="sobrenome"
                             placeholder="Sobrenome" 
                             maxlength="30"
-                            class="w-full shadow-sm shadow-neutral-300 rounded-sm py-1.5 px-3 m-0 bg-white outline-none placeholder:text-gray-500 placeholder:text-sm text-yellow-500" required>
+                            class="w-full shadow-sm shadow-neutral-300 rounded-sm py-1.5 px-3 m-0 bg-white outline-none placeholder:text-gray-500 placeholder:text-sm" required>
                     </div>
 
-                    <div class="input-one flex flex-col md:flex-row gap-4 pr-0">
+                    <div class="input-one w-full">
                         <input
                             type="text"
                             title="Seu melhor e-mail"
                             id="email"
                             placeholder="Seu e-mail"
-                            class="w-full md:w-9/12 shadow-sm shadow-neutral-300 rounded-sm py-1.5 px-3 bg-white outline-none placeholder:text-gray-500 placeholder:text-sm text-yellow-500" required>
-
-                        <select class="w-[65%] md:w-[75%] rounded-sm m-auto p-1.5 bg-yellow-500 font-semibold outline-none" id="select" required>
-                            <option value="" hidden>Selecionar Plano</option>
-                            <option value="100mb" class="font-bold">100 Megas</option>
-                            <option value="150mb" class="font-bold">150 Megas</option>
-                            <option value="200mb" class="font-bold">200 Megas</option>
-                            <option value="300mb" class="font-bold">300 Megas</option>
-                            <option value="500mb" class="font-bold">500 Megas</option>
-                            <option value="600mb" class="font-bold">600 Megas</option>
-                        </select>
+                            class="w-full shadow-sm shadow-neutral-300 rounded-sm py-1.5 px-3 bg-white outline-none placeholder:text-gray-500 placeholder:text-sm" required>  
+                            
                     </div>
 
                     <div class="msg flex flex-col gap-6 pr-0 md:pr-0">
                         <textarea
                             placeholder="Mensagem (opcional)"
-                            class="min-w-full shadow-sm shadow-neutral-300 rounded-sm bg-white p-4  outline-none placeholder:text-gray-600 placeholder:text-sm text-yellow-500" title="Adicione alguma observação" id="textarea"></textarea>
+                            class="min-w-full shadow-sm shadow-neutral-300 rounded-sm bg-white p-4  outline-none placeholder:text-gray-600 placeholder:text-sm" title="Adicione alguma observação" id="textarea"></textarea>
 
                         <button 
                             type="submit"
-                            class="bg-black text-white font-bold w-full md:mb-3 m-auto mb-8 p-2 rounded-sm hover:bg-yellow-500 hover:text-black cursor-pointer transition-all duration-300"
+                            class="submit bg-black text-yellow-400 font-bold w-full md:w-[50%] m-auto p-2 rounded-sm cursor-pointer transition-all duration-300"
                             id="btnForm">
                                 Solicitar contato
                         </button>
@@ -311,9 +347,9 @@
                 </div>
             
                 <div class="class-brands flex gap-4">
-                    <i class="fa-brands fa-whatsapp text-yellow-500 text-2xl md:text-3xl cursor-pointer hover:text-neutral-200 transition-all duration-300 ease-in-out"></i>
-                    <i class="fa-brands fa-instagram text-yellow-500 text-2xl md:text-3xl cursor-pointer hover:text-neutral-200 transition-all duration-300 ease-in-out"></i>
-                    <i class="fa-brands fa-twitter text-yellow-500 text-2xl md:text-3xl cursor-pointer hover:text-neutral-200 transition-all duration-300 ease-in-out"></i>
+                    <i id="whatsapp" class="fa-brands fa-whatsapp text-yellow-500 text-2xl md:text-3xl cursor-pointer hover:text-neutral-200 transition-all duration-300 ease-in-out"></i>
+                    <i class="fa-brands fa-instagram text-yellow-500 text-2xl md:text-3xl cursor-pointer hover:text-neutral-200 transition-all duration-300 ease-in-out" id="instagram"></i>
+                    <i class="fa-brands fa-twitter text-yellow-500 text-2xl md:text-3xl cursor-pointer hover:text-neutral-200 transition-all duration-300 ease-in-out" id="twitter"></i>
                 </div>
             </div>
 
@@ -322,7 +358,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

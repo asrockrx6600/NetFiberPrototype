@@ -2,14 +2,10 @@ const form = document.getElementById('form1')
 const btnForm = document.getElementById('btnForm')
 const warningMsg = document.querySelector('.warningMsg')
 
-/* btnForm.addEventListener('click', () => {
-    
-}) */
-
 
 btnForm.addEventListener('click', () => {
 
-    const campos = form.querySelectorAll('input, select')
+    const campos = form.querySelectorAll('input, textarea')
 
     for (const campo of campos) {
         if (!campo.checkValidity()) {
@@ -19,12 +15,11 @@ btnForm.addEventListener('click', () => {
     }
 
     const nameSend = document.getElementById('name').value
-    const telSend = document.getElementById('tel').value
+    const sobrenomeSend = document.getElementById('sobrenome').value
     const emailSend = document.getElementById('email').value
-    const planSend = document.getElementById('select').value
     const textarea = document.getElementById('textarea').value
 
-    const msg = `Olá, meu nome é ${encodeURIComponent(nameSend)} e eu gostaria de contratar o plano de ${encodeURIComponent(planSend)}. Utilizo atualmente este e-mail para contato: ${encodeURIComponent(emailSend)}. ${encodeURIComponent(textarea)}`
+    const msg = `Olá, meu nome é ${encodeURIComponent(nameSend)} ${encodeURIComponent(sobrenomeSend)} e eu gostaria de tirar uma dúvida: ${encodeURIComponent(textarea)}. Gostaria de receber atualizações e informações importantes no meu e-mail: ${encodeURIComponent(emailSend)}.`
 
     const numero = '5575981535154'
 

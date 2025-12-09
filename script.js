@@ -1,4 +1,4 @@
- const reveal = document.querySelectorAll('.justify, .contact, .escolha-planos, .plans-grid, .fibra-optica, .footer')
+ const reveal = document.querySelectorAll('.justify, .contact, .escolha-planos, .plans-grid, .fibra-optica')
 
 const observer = new IntersectionObserver(entradas => {
     entradas.forEach(entrada => {
