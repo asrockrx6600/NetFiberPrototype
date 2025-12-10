@@ -7,25 +7,30 @@
 :root[data-theme="light"] {
     --primary: #FDC700;
     --secundary: #fdc700;
-    --body: #fdc700;
-    --bg-nav: rgba(0, 0, 0, 0.9);
+    --body: #F5F5F5;
+    --bg-nav: #0A0E13;
     --black: #000000;
     --prev-next: #C10007;
-    --scrollbar-track: #FDC700;
 
-    --scrollbar-thumb: #e5e5e5;
+    --selection-bg: #222222;
+    --selection-txt: #fdc700;
+    --scrollbar-track: #F5F5F5;
+    --scrollbar-thumb: #b31312;
 
     --tn-fiber: #fdc700;
     --burguer: #fdc700;
     --container-C2: #222222;
+    --container-two-shadow: 0 0 5px rgba(0,0,0,0.9);
     --container-C2-txt: #fdc700;
-    --plans: #e5e5e5;
-    --span-plan-bg: #fdc700;
-    --span-plan-txt: #000000;
+    --plans: #fdc700;
+    --shadow-card: 0 0 5px rgba(0,0,0,0.3);
+    --span-plan-bg: #c10007;
+    --span-plan-txt: #f5f5f5;
     --plan-value: #c11007;
-    --icon-vantag: #fdc700;
+    --icon-vantag: #b31312;
     --icon-vantag-hover:#016630;
-    --contact: #f5f5f5;
+    --contact: #fdc700;
+    --contact-grid: #f4f4f4;
     --contact-btn: #000000;
     --contact-txt: #fdc700;
     --white: #e5e5e5;
@@ -34,32 +39,38 @@
 :root[data-theme="dark"] {
     --primary: #e5e5e5;
     --secundary: #e5e5e5;
-    --body: #212426;
+    --body: #0D0D0D;
     --bg-nav: rgba(0,0,0,0.9);
     --black: #d4d4d4;
     --prev-next: #fdc700;
 
-    --scrollbar-thumb: #e5e5e5;
+    --selection-bg: #fdc700;
+    --selection-txt: #222222;
+    --scrollbar-thumb: #fdc700;
+    --scrollbar-track: #0D0D0D;
 
     --tn-fiber: #fdc700;
     --burguer: #e5e5e5;
-    --container-C2: #ffc800dd;
+    --container-C2: #ffc800db;
+    --container-two-shadow: 0 0 5px rgba(255,255,255,0.2);
     --container-C2-txt: #111111;
-    --plans: #fdc700;
-    --span-plan-bg: #c10007;
+    --plans: #F4C51C;
+    --shadow-card: 0 0 5px rgba(253, 199, 0,0.5);
+    --span-plan-bg: #B31312;
     --span-plan-txt: #e5e5e5;
     --plan-value: #c10007;
     --icon-vantag: #c10007;
     --icon-vantag-hover: #016630;
-    --contact: #1c1c1c;
+    --contact: #0D0D0D;
+    --contact-grid: #1c1c1c;
     --contact-btn: #fdc700;
     --contact-txt: #000000;
     --white: #e5e5e5;
 }
 
 ::selection {
-    background: var(--black);
-    color: var(--primary);
+    background: var(--selection-bg);
+    color: var(--selection-txt);
 }
 
 ::-webkit-scrollbar {
@@ -170,7 +181,7 @@ body {
 .icon {
     font-size: 1rem;
     pointer-events: none;
-    transition: opacity 200ms;
+    transition: opacity 200ms ease, rotate 300ms ease;
 }
 
 .sun {
@@ -181,6 +192,10 @@ body {
 .moon {
     color: #0053b8;
     opacity: 1;
+}
+
+.sun.rotate, .moon.rotate {
+    transform: rotate(360deg);
 }
 
 [data-theme="dark"] .sun {
@@ -209,6 +224,7 @@ body {
 
 .fibra-optica-C2-plan {
     background: var(--container-C2);
+    box-shadow: var(--container-two-shadow);
 }
 
 .fibra-optica-C2-plan:hover {
@@ -287,17 +303,13 @@ body {
     top: 96px;
     right: 0;
     background: #000000;
-    opacity: 0;
-    visibility: hidden;
     transform: translateX(150%);
-    transition: transform 400ms ease-in-out, opacity 600ms ease-in-out;
+    transition: transform 600ms ease;
 }
 
 .nav-options-mobile.active {
     display: flex;
-    opacity: 1;
     transform: translateX(0);
-    visibility: visible;
 }
 
 .plans-grid {
@@ -326,6 +338,7 @@ body {
     scroll-snap-align: center;
     min-width: 300px;
     background: var(--plans);
+    box-shadow: var(--shadow-card);
 }
 
 .plan-value {
@@ -349,12 +362,13 @@ body {
     text-align: center;
     text-decoration: none;
     color: #fdc700;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
     background: #000000;
     transition: background 300ms ease, transform 300ms ease;
 }
 
 .plan-one a:hover {
-    background: #222222;
+    background: #B31312;
     transform: scale(1.02);
 }
 
@@ -363,8 +377,12 @@ body {
     background: var(--contact);
 }
 
-.contact-grid {
+.contact {
     background: var(--contact);
+}
+
+.contact-grid {
+    background: var(--contact-grid);
 }
 
 .c-grid-one h2, .c-grid-one p {
@@ -390,6 +408,10 @@ body {
 
 textarea {
     resize: none;
+}
+
+.footer {
+    border-radius: 0 5px 0 0;
 }
 
 @media (max-width: 768px) {

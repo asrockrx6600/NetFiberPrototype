@@ -1,4 +1,4 @@
- const reveal = document.querySelectorAll('.justify, .contact, .escolha-planos, .plans-grid, .fibra-optica')
+const reveal = document.querySelectorAll('.justify, .contact, .escolha-planos, .plans-grid, .fibra-optica')
 
 const observer = new IntersectionObserver(entradas => {
     entradas.forEach(entrada => {
@@ -29,3 +29,6 @@ next.addEventListener('click', () => {
 prev.addEventListener('click', () => {
     carrossel.scrollBy({ left: -200, behavior: "smooth" })
 })
+
+
+

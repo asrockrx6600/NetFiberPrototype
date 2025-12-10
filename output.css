@@ -220,24 +220,6 @@
   .z-50 {
     z-index: 50;
   }
-  .container {
-    width: 100%;
-    @media (width >= 40rem) {
-      max-width: 40rem;
-    }
-    @media (width >= 48rem) {
-      max-width: 48rem;
-    }
-    @media (width >= 64rem) {
-      max-width: 64rem;
-    }
-    @media (width >= 80rem) {
-      max-width: 80rem;
-    }
-    @media (width >= 96rem) {
-      max-width: 96rem;
-    }
-  }
   .m-0 {
     margin: calc(var(--spacing) * 0);
   }
@@ -252,12 +234,6 @@
   }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
-  }
-  .mt-8 {
-    margin-top: calc(var(--spacing) * 8);
-  }
-  .mt-12 {
-    margin-top: calc(var(--spacing) * 12);
   }
   .mt-20 {
     margin-top: calc(var(--spacing) * 20);
@@ -286,9 +262,6 @@
   .inline-block {
     display: inline-block;
   }
-  .table {
-    display: table;
-  }
   .h-14 {
     height: calc(var(--spacing) * 14);
   }
@@ -301,23 +274,14 @@
   .h-screen {
     height: 100vh;
   }
-  .w-2 {
-    width: calc(var(--spacing) * 2);
-  }
   .w-2\/4 {
     width: calc(2/4 * 100%);
-  }
-  .w-9 {
-    width: calc(var(--spacing) * 9);
   }
   .w-9\/12 {
     width: calc(9/12 * 100%);
   }
   .w-14 {
     width: calc(var(--spacing) * 14);
-  }
-  .w-\[40\%\] {
-    width: 40%;
   }
   .w-\[80\%\] {
     width: 80%;
@@ -327,9 +291,6 @@
   }
   .w-\[95\%\] {
     width: 95%;
-  }
-  .w-\[100\%\] {
-    width: 100%;
   }
   .w-fit {
     width: fit-content;
@@ -343,13 +304,6 @@
   .min-w-full {
     min-width: 100%;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .translate-y-1 {
-    --tw-translate-y: calc(var(--spacing) * 1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
@@ -358,9 +312,6 @@
   }
   .cursor-pointer {
     cursor: pointer;
-  }
-  .resize {
-    resize: both;
   }
   .scroll-mt-44 {
     scroll-margin-top: calc(var(--spacing) * 44);
@@ -397,9 +348,6 @@
   }
   .justify-start {
     justify-content: flex-start;
-  }
-  .gap-1 {
-    gap: calc(var(--spacing) * 1);
   }
   .gap-1\.5 {
     gap: calc(var(--spacing) * 1.5);
@@ -450,15 +398,8 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-t {
-    border-top-style: var(--tw-border-style);
-    border-top-width: 1px;
-  }
   .border-neutral-200 {
     border-color: var(--color-neutral-200);
-  }
-  .border-neutral-400 {
-    border-color: var(--color-neutral-400);
   }
   .border-neutral-600 {
     border-color: var(--color-neutral-600);
@@ -471,9 +412,6 @@
   }
   .bg-green-900 {
     background-color: var(--color-green-900);
-  }
-  .bg-neutral-100 {
-    background-color: var(--color-neutral-100);
   }
   .bg-neutral-800 {
     background-color: var(--color-neutral-800);
@@ -538,6 +476,9 @@
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
   }
+  .pt-8 {
+    padding-top: calc(var(--spacing) * 8);
+  }
   .pt-44 {
     padding-top: calc(var(--spacing) * 44);
   }
@@ -546,6 +487,9 @@
   }
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
+  }
+  .pb-28 {
+    padding-bottom: calc(var(--spacing) * 28);
   }
   .text-center {
     text-align: center;
@@ -587,9 +531,6 @@
   }
   .text-\[8px\] {
     font-size: 8px;
-  }
-  .text-\[10px\] {
-    font-size: 10px;
   }
   .text-\[12px\] {
     font-size: 12px;
@@ -661,14 +602,6 @@
       --tw-shadow-color: color-mix(in oklab, var(--color-neutral-800) var(--tw-shadow-alpha), transparent);
     }
   }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
-  .backdrop-filter {
-    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-  }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -729,29 +662,6 @@
       color: var(--color-neutral-400);
     }
   }
-  .hover\:translate-y-1 {
-    &:hover {
-      @media (hover: hover) {
-        --tw-translate-y: calc(var(--spacing) * 1);
-        translate: var(--tw-translate-x) var(--tw-translate-y);
-      }
-    }
-  }
-  .hover\:scale-z-\[h-1\] {
-    &:hover {
-      @media (hover: hover) {
-        --tw-scale-z: h-1;
-        scale: var(--tw-scale-x) var(--tw-scale-y) var(--tw-scale-z);
-      }
-    }
-  }
-  .hover\:transform {
-    &:hover {
-      @media (hover: hover) {
-        transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-      }
-    }
-  }
   .hover\:bg-red-600 {
     &:hover {
       @media (hover: hover) {
@@ -766,10 +676,10 @@
       }
     }
   }
-  .hover\:text-neutral-200 {
+  .hover\:text-red-600 {
     &:hover {
       @media (hover: hover) {
-        color: var(--color-neutral-200);
+        color: var(--color-red-600);
       }
     }
   }
@@ -988,23 +898,28 @@
 :root[data-theme="light"] {
   --primary: #FDC700;
   --secundary: #fdc700;
-  --body: #fdc700;
-  --bg-nav: rgba(0, 0, 0, 0.9);
+  --body: #F5F5F5;
+  --bg-nav: #0A0E13;
   --black: #000000;
   --prev-next: #C10007;
-  --scrollbar-track: #FDC700;
-  --scrollbar-thumb: #e5e5e5;
+  --selection-bg: #222222;
+  --selection-txt: #fdc700;
+  --scrollbar-track: #F5F5F5;
+  --scrollbar-thumb: #b31312;
   --tn-fiber: #fdc700;
   --burguer: #fdc700;
   --container-C2: #222222;
+  --container-two-shadow: 0 0 5px rgba(0,0,0,0.9);
   --container-C2-txt: #fdc700;
-  --plans: #e5e5e5;
-  --span-plan-bg: #fdc700;
-  --span-plan-txt: #000000;
+  --plans: #fdc700;
+  --shadow-card: 0 0 5px rgba(0,0,0,0.3);
+  --span-plan-bg: #c10007;
+  --span-plan-txt: #f5f5f5;
   --plan-value: #c11007;
-  --icon-vantag: #fdc700;
+  --icon-vantag: #b31312;
   --icon-vantag-hover: #016630;
-  --contact: #f5f5f5;
+  --contact: #fdc700;
+  --contact-grid: #f4f4f4;
   --contact-btn: #000000;
   --contact-txt: #fdc700;
   --white: #e5e5e5;
@@ -1012,29 +927,35 @@
 :root[data-theme="dark"] {
   --primary: #e5e5e5;
   --secundary: #e5e5e5;
-  --body: #212426;
+  --body: #0D0D0D;
   --bg-nav: rgba(0,0,0,0.9);
   --black: #d4d4d4;
   --prev-next: #fdc700;
-  --scrollbar-thumb: #e5e5e5;
+  --selection-bg: #fdc700;
+  --selection-txt: #222222;
+  --scrollbar-thumb: #fdc700;
+  --scrollbar-track: #0D0D0D;
   --tn-fiber: #fdc700;
   --burguer: #e5e5e5;
-  --container-C2: #ffc800dd;
+  --container-C2: #ffc800db;
+  --container-two-shadow: 0 0 5px rgba(255,255,255,0.2);
   --container-C2-txt: #111111;
-  --plans: #fdc700;
-  --span-plan-bg: #c10007;
+  --plans: #F4C51C;
+  --shadow-card: 0 0 5px rgba(253, 199, 0,0.5);
+  --span-plan-bg: #B31312;
   --span-plan-txt: #e5e5e5;
   --plan-value: #c10007;
   --icon-vantag: #c10007;
   --icon-vantag-hover: #016630;
-  --contact: #1c1c1c;
+  --contact: #0D0D0D;
+  --contact-grid: #1c1c1c;
   --contact-btn: #fdc700;
   --contact-txt: #000000;
   --white: #e5e5e5;
 }
 ::selection {
-  background: var(--black);
-  color: var(--primary);
+  background: var(--selection-bg);
+  color: var(--selection-txt);
 }
 ::-webkit-scrollbar {
   width: 8px;
@@ -1125,7 +1046,7 @@ body {
 .icon {
   font-size: 1rem;
   pointer-events: none;
-  transition: opacity 200ms;
+  transition: opacity 200ms ease, rotate 300ms ease;
 }
 .sun {
   color: #FDC700;
@@ -1134,6 +1055,9 @@ body {
 .moon {
   color: #0053b8;
   opacity: 1;
+}
+.sun.rotate, .moon.rotate {
+  transform: rotate(360deg);
 }
 [data-theme="dark"] .sun {
   opacity: 1;
@@ -1155,6 +1079,7 @@ body {
 }
 .fibra-optica-C2-plan {
   background: var(--container-C2);
+  box-shadow: var(--container-two-shadow);
 }
 .fibra-optica-C2-plan:hover {
   transform: scale(1.03);
@@ -1214,16 +1139,12 @@ body {
   top: 96px;
   right: 0;
   background: #000000;
-  opacity: 0;
-  visibility: hidden;
   transform: translateX(150%);
-  transition: transform 400ms ease-in-out, opacity 600ms ease-in-out;
+  transition: transform 600ms ease;
 }
 .nav-options-mobile.active {
   display: flex;
-  opacity: 1;
   transform: translateX(0);
-  visibility: visible;
 }
 .plans-grid {
   scroll-snap-type: x mandatory;
@@ -1246,6 +1167,7 @@ body {
   scroll-snap-align: center;
   min-width: 300px;
   background: var(--plans);
+  box-shadow: var(--shadow-card);
 }
 .plan-value {
   color: var(--plan-value);
@@ -1264,19 +1186,23 @@ body {
   text-align: center;
   text-decoration: none;
   color: #fdc700;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
   background: #000000;
   transition: background 300ms ease, transform 300ms ease;
 }
 .plan-one a:hover {
-  background: #222222;
+  background: #B31312;
   transform: scale(1.02);
 }
 .about {
   color: var(--black);
   background: var(--contact);
 }
-.contact-grid {
+.contact {
   background: var(--contact);
+}
+.contact-grid {
+  background: var(--contact-grid);
 }
 .c-grid-one h2, .c-grid-one p {
   color: var(--black);
@@ -1297,6 +1223,9 @@ body {
 textarea {
   resize: none;
 }
+.footer {
+  border-radius: 0 5px 0 0;
+}
 @media (max-width: 768px) {
   .navbar {
     border-radius: 0;
@@ -1315,21 +1244,6 @@ textarea {
   .tnfiber-mobile {
     display: flex;
   }
-}
-@property --tw-translate-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-translate-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-translate-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
 }
 @property --tw-rotate-x {
   syntax: "*";
@@ -1425,47 +1339,6 @@ textarea {
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-backdrop-blur {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-brightness {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-contrast {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-grayscale {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-hue-rotate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-invert {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-opacity {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-saturate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-sepia {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-duration {
   syntax: "*";
   inherits: false;
@@ -1474,27 +1347,9 @@ textarea {
   syntax: "*";
   inherits: false;
 }
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-translate-x: 0;
-      --tw-translate-y: 0;
-      --tw-translate-z: 0;
       --tw-rotate-x: initial;
       --tw-rotate-y: initial;
       --tw-rotate-z: initial;
@@ -1516,21 +1371,8 @@ textarea {
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
-      --tw-backdrop-blur: initial;
-      --tw-backdrop-brightness: initial;
-      --tw-backdrop-contrast: initial;
-      --tw-backdrop-grayscale: initial;
-      --tw-backdrop-hue-rotate: initial;
-      --tw-backdrop-invert: initial;
-      --tw-backdrop-opacity: initial;
-      --tw-backdrop-saturate: initial;
-      --tw-backdrop-sepia: initial;
       --tw-duration: initial;
       --tw-ease: initial;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
     }
   }
 }
