@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inconsolata:wght@200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="./output.css">
+
+    <script src="clientAria.js" defer></script>
+    <link rel="stylesheet" href="clientAria.css">
+
+    <link rel="shortcut icon" href="tnfiber.png" type="image/x-icon">
+
+    <title>Área do cliente</title>
+</head>
+<body>
+    <main>
+        <div class="">
+            <div>
+                <form id="form">
+                    <div class="flex justify-center items-center flex-col gap-8 p-8 w-full m-auto bg-[#e5e5e5] text-neutral-800 rounded-lg">
+                        <label class="text-4xl">Digite o seu CPF</label>
+                        <input
+                            type="text"
+                            maxlength="14"
+                            placeholder="000.000.000-00"
+                            class="w-full border border-neutral-200 rounded-sm p-2.5 text-lg font-semibold focus:outline-none placeholder:text-gray-600" id="cpf" required>
+
+                        <button
+                            type="submit"
+                            class="bg-yellow-400 w-[60%] m-auto p-1.5 rounded-lg text-black font-bold cursor-pointer" id="send">
+                            Entrar
+                        </button>
+
+                        <p class="text-xs text-green-700">Seus dados estão protegidos. <i class="fa-solid fa-lock"></i></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

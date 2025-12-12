@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
+    <script>
+            // função para chamar o tema light (default)
+        function aplicarTema() {
+                const savedTheme = localStorage.getItem('tema') || 'light'
+                document.documentElement.setAttribute('data-theme', savedTheme)
+            }
+
+            aplicarTema()
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,14 +31,15 @@
     <script src="script.js" defer></script>
     <script src="theme.js" defer></script>
     <script src="menuBurguer.js" defer></script>
+    <script src="plans.js" defer></script>
     <script src="sendForm.js" defer></script>
     <script src="socialMedias.js" defer></script>
-    <script src="paymentP2.js" defer></script>
+    <!-- <script src="paymentP2.js" defer></script> -->
 
     <title>TN Fiber</title>
 </head>
 
-<body class="pt-44 md:pt-48 dark">
+<body class="pt-44 md:pt-48">
     <header>
         <nav>
             <div class="navbar flex justify-center md:justify-between items-center py-0 px-6 md:px-8 h-24 fixed top-0 min-w-full z-50">
@@ -59,7 +71,7 @@
                         Área do cliente
                     </button>
 
-                    <div class="theme">
+                    <div class="theme-mobile">
                         <button class="btn-toggle py-1 px-3 rounded-lg" id="theme">
                             <span class="circle"></span>
 
@@ -76,8 +88,7 @@
                     <div class="flex flex-col gap-4">
                         <div class="flex flex-col gap-4">
                             <a href="#plans" class="inline-block relative transition-all duration-300 ease-in-out text-lg">Planos</a>
-                            <a href="#about" class="inline-block relative transition-all duration-300 ease-in-out text-lg">Sobre a
-                                gente</a>
+                            <a href="#about" class="inline-block relative transition-all duration-300 ease-in-out text-lg">Sobre a gente</a>
                             <a href="#contact" class="inline-block relative transition-all duration-300 ease-in-out text-lg">Contato</a>
                         </div>
                 
@@ -107,7 +118,7 @@
                     <span></span>
                 </div>
             </div>
-        </div>
+        
     </nav>
 </header>
 
@@ -141,7 +152,7 @@
 
                     <div class="flex flex-col gap-4 w-full text-lg">
                         <h3 class="text-sm md:text-lg">Velocidade média</h3>
-                        <span class="text-5xl md:text-5xl font-bold">500 Mbps</span>
+                        <span class="text-5xl md:text-5xl font-bold">300 Mbps</span>
                         <p class="text-sm md:text-lg">Ping médio: <span class="font-bold">20 ms</span></p>
                     </div>
 
@@ -179,14 +190,14 @@
                         <span class=" font-bold w-fit py-1.5 px-4 bg-black text-white shadow-sm shadow-black rounded-xl cursor-default">Essencial</span>
                         <i class="icon-check fa-solid fa-circle-check text-xs h-fit hover:text-green-800" title="Selo de Qualidade TN Fiber!"></i>
                     </div>
-                    <h3 class="plan-value font-bold text-4xl md:text-5xl">100 MEGAS</h3>
+                    <h3 class="plan-value font-bold text-4xl md:text-4xl">100 MEGAS</h3>
                     <h4 class="plan-price text-xl text-black font-bold">R$ 60<span class="text-xs text-black">/mês</span></h4>
     
                     <p><i class="icon-vantages fa-solid fa-location-arrow"></i> Navegação</p>
                     <p><i class="icon-vantages fa-brands fa-whatsapp"></i> Redes sociais</p>
                     <p><i class="icon-vantages fa-solid fa-wifi"></i> Conexão 24h</p>
     
-                    <a href="payment.html" class="buttonP w-2/4 font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer">Contratar</a>
+                    <a class="buttonP w-2/4 font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer">Contratar</a>
                 </div>
     
                 <div class="plan-one flex flex-col gap-4 p-4 rounded-xl transition-transform duration-300 cursor-default select-none">
@@ -194,14 +205,14 @@
                         <span class="span-plan font-semibold w-fit py-1.5 px-4 shadow-sm shadow-black rounded-xl text-white cursor-default">Recomendado <i class="fa-solid fa-fire"></i></span>
                         <i class="icon-check fa-solid fa-circle-check text-xs h-fit hover:text-green-800" title="Selo de Qualidade TN Fiber!"></i>
                     </div>
-                    <h3 class="plan-value font-bold text-4xl md:text-5xl">300 MEGAS</h3>
+                    <h3 class="plan-value font-bold text-4xl md:text-4xl">300 MEGAS</h3>
                     <h4 class="plan-price text-xl text-black font-bold">R$ 99,90<span class="text-xs text-black">/mês</span></h4>
     
                     <p><i class="icon-vantages fa-solid fa-mobile-screen"></i> Multidispositivos</p>
                     <p><i class="icon-vantages fa-solid fa-circle-check"></i> Instalação inclusa*</p>
                     <p><i class="icon-vantages fa-solid fa-wifi"></i> Conexão 24h</p>
     
-                    <a href="payment.html" class="buttonP w-2/4 font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer">Contratar</a>
+                    <a class="buttonP w-2/4 font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer">Contratar</a>
                 </div>
     
                 <div class="plan-one flex flex-col gap-4 p-4 rounded-xl transition-transform duration-300 cursor-default select-none">
@@ -209,14 +220,14 @@
                         <span class="font-bold w-fit py-1.5 px-4 bg-black text-white shadow-sm shadow-black rounded-xl cursor-default">Popular</span>
                         <i class="icon-check fa-solid fa-circle-check text-xs h-fit hover:text-green-800" title="Selo de Qualidade TN Fiber!"></i>
                     </div>
-                    <h3 class=" plan-value font-bold text-4xl md:text-5xl">500 MEGAS</h3>
+                    <h3 class=" plan-value font-bold text-4xl md:text-4xl">500 MEGAS</h3>
                     <h4 class="plan-price text-xl text-black font-bold">R$ 139,90<span class="text-xs text-black">/mês</span></h4>
     
                     <p><i class="icon-vantages fa-solid fa-mobile-screen"></i> Multidispositivos</p>
                     <p><i class="icon-vantages fa-solid fa-circle-check"></i> Instalação inclusa*</p>
                     <p><i class="icon-vantages fa-solid fa-wifi"></i> Conexão 24h</p>
     
-                    <a href="payment.html" class="buttonP w-2/4 font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer">Contratar</a>
+                    <a class="buttonP w-2/4 font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer">Contratar</a>
                 </div>
 
                 <div class="plan-one flex flex-col gap-4 p-4 rounded-xl transition-transform duration-300 cursor-default select-none">
@@ -224,14 +235,14 @@
                         <span class="font-bold w-fit py-1.5 px-4 bg-black shadow-sm shadow-black text-white rounded-xl cursor-default">Essencial</span>
                         <i class="icon-check fa-solid fa-circle-check text-xs h-fit" title="Selo de Qualidade TN Fiber!"></i>
                     </div>
-                    <h3 class="plan-value font-bold text-4xl md:text-5xl">150 MEGAS</h3>
+                    <h3 class="plan-value font-bold text-4xl md:text-4xl">150 MEGAS</h3>
                     <h4 class="plan-price text-xl text-black font-bold">R$ 70<span class="text-xs text-black">/mês</span></h4>
     
                     <p><i class="icon-vantages fa-solid fa-comments"></i> Navegação e redes sociais</p>
                     <p><i class="icon-vantages fa-solid fa-circle-check"></i> Instalação inclusa*</p>
                     <p><i class="icon-vantages fa-solid fa-wifi"></i> Conexão 24h</p>
     
-                    <a href="payment.html" class="buttonP w-2/4 font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer">Contratar</a>
+                    <a class="buttonP w-2/4 font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer">Contratar</a>
                 </div>
     
                 <div class="plan-one flex flex-col gap-4 p-4 rounded-xl transition-transform duration-300 cursor-default select-none">
@@ -239,14 +250,14 @@
                         <span class="span-plan font-semibold w-fit py-1.5 px-4 shadow-sm shadow-black rounded-xl text-white cursor-default">Custo benefício <i class="fa-solid fa-fire"></i></span>
                         <i class="icon-check fa-solid fa-circle-check text-xs h-fit" title="Selo de Qualidade TN Fiber!"></i>
                     </div>
-                    <h3 class="plan-value font-bold text-4xl md:text-5xl">200 MEGAS</h3>
+                    <h3 class="plan-value font-bold text-4xl md:text-4xl">200 MEGAS</h3>
                     <h4 class="plan-price text-xl text-black font-bold">R$ 79,90<span class="text-xs text-black">/mês</span></h4>
     
                     <p><i class="icon-vantages fa-solid fa-mobile-screen"></i> Multidispositivos</p>
                     <p><i class="icon-vantages fa-solid fa-circle-check"></i> Instalação inclusa*</p>
                     <p><i class="icon-vantages fa-solid fa-wifi"></i> Conexão 24h</p>
     
-                    <a href="payment.html" class="buttonP w-2/4 font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer">Contratar</a>
+                    <a class="buttonP w-2/4 font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer">Contratar</a>
                 </div>
     
                 <div class="plan-one flex flex-col gap-4 p-4 rounded-xl transition-transform duration-300 cursor-default select-none">
@@ -254,14 +265,14 @@
                         <span class="font-bold w-fit py-1.5 px-4 bg-black text-white shadow-sm shadow-black rounded-xl cursor-default">Empresarial</span>
                         <i class="icon-check fa-solid fa-circle-check hover:text-green-800 text-xs h-fit" title="Selo de Qualidade TN Fiber!"></i>
                     </div>
-                    <h3 class="plan-value font-bold text-4xl md:text-5xl">600 MEGAS</h3>
+                    <h3 class="plan-value font-bold text-4xl md:text-4xl">600 MEGAS</h3>
                     <h4 class="plan-price text-xl text-black font-bold">R$ 169,90<span class="text-xs text-black">/mês</span></h4>
     
                     <p><i class="icon-vantages fa-solid fa-mobile-screen"></i> Multidispositivos</p>
                     <p><i class="icon-vantages fa-solid fa-circle-check"></i> Instalação inclusa*</p>
                     <p><i class="icon-vantages fa-solid fa-wifi"></i> Conexão 24h</p>
     
-                    <a href="payment.html" class="buttonP w-2/4 font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer">Contratar</a>
+                    <a class="buttonP w-2/4 font-bold m-auto my-2 md:m-auto p-1.5 rounded-xl cursor-pointer">Contratar</a>
                 </div>
             </div>
 
@@ -269,17 +280,17 @@
         </div>
 
         <div class="justify scroll-mt-48 mb-36 md:mb-16 md:mt-24" id="about">
-            <div class="about flex justify-center items-center flex-col gap-10 w-[80%] p-4 m-auto rounded-2xl md:py-20">
-                <h2 class="text-center font-bold text-3xl md:text-4xl">Por que escolher a <span class="text-yellow-500">TN Fiber</span>?</h2>
-                <p class="text-justify md:text-center text-sm md:text-xl">Na <span class="font-bold">TN Fiber</span>, a sua conexão vai além da internet. Entregamos <span class="underline">velocidade</span> real, com estabilidade até nos horários de pico, para que você possa trabalhar, estudar, assistir e jogar sem interrupções. Nosso atendimento é rápido, humano e próximo de você, garantindo suporte sempre que precisar. Escolha quem realmente se importa com a sua experiência e conecta você ao que mais importa!</p>
+            <div class="about flex justify-center items-center flex-col gap-10 w-[90%] p-4 m-auto rounded-2xl md:py-20">
+                <h2 class="text-center font-bold text-4xl md:text-4xl">Por que escolher a gente?</h2>
+                <p class="text-center md:text-center text-[16px] md:text-xl">Na <span class="tn font-bold text-yellow-500">TN Fiber</span>, a sua conexão vai além da internet. Entregamos velocidade real, com estabilidade até nos horários de pico, para que você possa trabalhar, estudar, assistir e jogar sem interrupções. Nosso atendimento é rápido, humano e próximo de você, garantindo suporte sempre que precisar. Escolha quem realmente se importa com a sua experiência e conecta você ao que mais importa!</p>
             </div>
         </div>
 
-        <div class="contact max-w-full scroll-mt-44 md:mt-30 pt-8 pb-28" id="contact">
+        <div class="contact max-w-full scroll-mt-44 md:mt-30 pt-8 pb-8 md:pb-28" id="contact">
             <div class="contact-grid grid grid-cols-1 pt-4 md:pt-8 md:grid-cols-2 w-[80%] m-auto rounded-2xl">
 
-                <div class="c-grid-one flex flex-col gap-4 py-10 px-4 md:py-24">
-                    <h2 class="font-bold text-2xl text-center cursor-default md:text-4xl">Fale com a <span class="text-yellow-500">TN Fiber</span></h2>
+                <div class="c-grid-one flex flex-col gap-4 py-10 px-4 md:py-24 select-none">
+                    <h2 class="font-bold text-2xl text-center cursor-default md:text-4xl">Fale conosco</h2>
                     <p class=" text-center cursor-default m-auto md:w-[75%]">Preencha o formulário e entre em contato com a gente.</p>
                     <span class="text-xs font-semibold bg-green-900 text-white py-1 px-3 rounded-3xl w-fit m-auto select-none">Atendimento humanizado <i class="fa-solid fa-hand-holding-hand text-white"></i></span>
                 </div>
@@ -315,8 +326,8 @@
 
                     <div class="msg flex flex-col gap-6 pr-0 md:pr-0">
                         <textarea
-                            placeholder="Mensagem (opcional)"
-                            class="min-w-full shadow-sm shadow-neutral-300 rounded-sm bg-white p-4  outline-none placeholder:text-gray-600 placeholder:text-sm" title="Adicione alguma observação" id="textarea"></textarea>
+                            placeholder="Sua mensagem"
+                            class="min-w-full shadow-sm shadow-neutral-300 rounded-sm bg-white p-4  outline-none placeholder:text-gray-600 placeholder:text-sm" id="textarea" required></textarea>
 
                         <button 
                             type="submit"
@@ -340,18 +351,18 @@
             
             <div class="flex items-center flex-col gap-4 md:justify-between md:flex-row">
                 <div class="select-none">
-                    <span class="text-[12px] md:text-xs text-white"><i class="fa-solid fa-location-dot text-lg text-yellow-500"></i> Avenida Jaime Vilas Boas, N° 127, Centro - Terra Nova BA</span>
+                    <span class="text-[12px] md:text-xs text-white"><i class="fa-solid fa-location-dot text-sm text-yellow-500"></i> Avenida Jaime Vilas Boas, N° 127, Centro - Terra Nova BA</span>
                 </div>
             
                 <div class="class-brands flex gap-4">
-                    <i class="fa-brands fa-whatsapp text-yellow-500 text-2xl md:text-3xl cursor-pointer hover:text-red-600 transition-all duration-300 ease" id="whatsapp" title="Whatsapp"></i>
-                    <i class="fa-brands fa-instagram text-yellow-500 text-2xl md:text-3xl cursor-pointer hover:text-red-600 transition-all duration-300 ease" id="instagram" title="Instagram"></i>
-                    <i class="fa-brands fa-twitter text-yellow-500 text-2xl md:text-3xl cursor-pointer hover:text-red-600 transition-all duration-300 ease" id="twitter" title="Twitter"></i>
+                    <i class="fa-brands fa-whatsapp text-yellow-500 text-lg md:text-3xl cursor-pointer hover:text-red-600 transition-colors duration-100 ease" id="whatsapp" title="Whatsapp"></i>
+                    <i class="fa-brands fa-instagram text-yellow-500 text-lg md:text-3xl cursor-pointer hover:text-red-600 transition-colors duration-100 ease" id="instagram" title="Instagram"></i>
+                    <i class="fa-brands fa-twitter text-yellow-500 text-lg md:text-3xl cursor-pointer hover:text-red-600 transition-colors duration-100 ease" id="twitter" title="Twitter"></i>
                 </div>
             </div>
 
             <div class="flex justify-center items-center select-none m-auto">
-                <span class="text-xs text-white">&copy; <span class="text-yellow-500">TN Fiber</span> 2017. Todos os direitos reservados.</span>
+                <span class="text-xs text-white">&copy; 2017 <span class="text-yellow-500" title="TN Fiber">TN Fiber</span>. Todos os direitos reservados.</span>
             </div>
         </div>
     </footer>

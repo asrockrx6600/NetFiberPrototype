@@ -7,21 +7,21 @@
 :root[data-theme="light"] {
     --primary: #FDC700;
     --secundary: #fdc700;
-    --body: #F5F5F5;
-    --bg-nav: #0A0E13;
+    --body: #f5f5f5;
+    --bg-nav: rgba(30, 30, 30, 0.9);
     --black: #000000;
     --prev-next: #C10007;
 
-    --selection-bg: #222222;
-    --selection-txt: #fdc700;
+    --selection-bg: #000000;
+    --selection-txt: #fdc100;
     --scrollbar-track: #F5F5F5;
     --scrollbar-thumb: #b31312;
 
     --tn-fiber: #fdc700;
     --burguer: #fdc700;
-    --container-C2: #222222;
+    --container-C2: #fdc700;
     --container-two-shadow: 0 0 5px rgba(0,0,0,0.9);
-    --container-C2-txt: #fdc700;
+    --container-C2-txt: #111111;
     --plans: #fdc700;
     --shadow-card: 0 0 5px rgba(0,0,0,0.3);
     --span-plan-bg: #c10007;
@@ -40,20 +40,21 @@
     --primary: #e5e5e5;
     --secundary: #e5e5e5;
     --body: #0D0D0D;
-    --bg-nav: rgba(0,0,0,0.9);
+    --bg-nav: rgba(34, 34, 34, 0.9);
     --black: #d4d4d4;
     --prev-next: #fdc700;
 
     --selection-bg: #fdc700;
-    --selection-txt: #222222;
+    --selection-txt: #000000;
     --scrollbar-thumb: #fdc700;
     --scrollbar-track: #0D0D0D;
 
     --tn-fiber: #fdc700;
     --burguer: #e5e5e5;
-    --container-C2: #ffc800db;
-    --container-two-shadow: 0 0 5px rgba(255,255,255,0.2);
+    --container-C2: #fdc100;
+    --container-two-shadow: 0 0 5px rgba(255,255,255,0.8);
     --container-C2-txt: #111111;
+    --border-C2: #b31312;
     --plans: #F4C51C;
     --shadow-card: 0 0 5px rgba(253, 199, 0,0.5);
     --span-plan-bg: #B31312;
@@ -97,7 +98,7 @@ body {
 
 .navbar {
     background: var(--bg-nav);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     border-radius: 0 0 5px 0;
 }
 
@@ -136,8 +137,8 @@ body {
     left: 0;
     width: 0%;
     height: 2px;
-    background: var(--white);
-    transition: all 300ms ease-in-out;
+    background: #e5e5e5;
+    transition: all 300ms ease;
 }
 
 .nav-options a:hover::after {
@@ -158,7 +159,7 @@ body {
     align-items: center;
     width: 3rem;
     height: 1.4rem;
-    background: #4e4e4e;
+    background: rgb(44, 51, 65);
     border: none;
     position: relative;
     transition: background 300ms;
@@ -190,12 +191,8 @@ body {
 }
 
 .moon {
-    color: #0053b8;
+    color: #e5e5e5;
     opacity: 1;
-}
-
-.sun.rotate, .moon.rotate {
-    transform: rotate(360deg);
 }
 
 [data-theme="dark"] .sun {
@@ -291,18 +288,18 @@ body {
 .nav-options-mobile {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
     text-align: center;
     padding: 2rem 1rem;
     gap: 1rem;
     width: 50%;
-    height: 30vh;
+    height: 100vh;
     border-radius: 0 0 0 5px;
     position: absolute;
     top: 96px;
     right: 0;
-    background: #000000;
+    background: rgba(10, 14, 19, 1);
     transform: translateX(150%);
     transition: transform 600ms ease;
 }
@@ -374,11 +371,28 @@ body {
 
 .about {
     color: var(--black);
-    background: var(--contact);
+}
+
+.tn {
+    display: inline-block;
+    position: relative;
+}
+
+.tn::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    width: 50%;
+    height: 3px;
+    background: #F4B000;
+    transform: translateY(-50%);
+    border-radius: 3px;
 }
 
 .contact {
     background: var(--contact);
+    border-radius: 0 5px 0 0;
 }
 
 .contact-grid {
@@ -398,10 +412,6 @@ body {
     transform: scale(1.04);
 }
 
-.class-brands i:hover {
-    transform: scale(1.05);
-}
-
 .warningMsg.active {
     opacity: 1;
 }
@@ -410,14 +420,52 @@ textarea {
     resize: none;
 }
 
-.footer {
-    border-radius: 0 5px 0 0;
+@media (max-width: 1000px) {
+
+    .navbar {
+        justify-content: space-between;
+        border-radius: 0;
+    }
+
+    .nav-options, .logo-text, .client-aria, .theme-mobile {
+        display: none;
+    }
+
+    .client-aria, .theme {
+        display: flex;
+    }
+
+    .burguer {
+        display: flex;
+    }
+
+    .plans-grid {
+        width: 100%;
+    }
+
+    .plan-one {
+    flex: 0 0 245px;
+    min-width: 200px;
+    scroll-snap-align: center;
+    }
+
+    .tnfiber-mobile {
+        display: flex;
+    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
 
     .navbar {
         border-radius: 0;
+    }
+
+    .nav-options, .logo-text, .client-aria, .theme-mobile {
+        display: none;
+    }
+
+    .client-aria, .theme {
+        display: flex;
     }
 
     .burguer {

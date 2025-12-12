@@ -26,74 +26,141 @@
 </head>
 <body>
     <main>
-        <form>
-            <div class="flex w-full h-screen md:h-[120vh] bg-yellow-400">
-                <div class="flex flex-col gap-6 w-[90%] md:w-[40%] py-8 px-4 m-auto border bg-neutral-800 text-neutral-200 border-neutral-800 rounded-lg shadow-sm shadow-black">
-    
+        <form id="form">
+            <div class="flex w-full h-[130vh] md:h-[140vh] py-4 bg-neutral-800 shadow-sm shadow-neutral-900">
+                <div
+                    class="flex flex-col gap-6 w-[90%] md:w-[40%] py-8 px-4 m-auto bg-[#1E1E1E] text-[#EAEAEA]  rounded-lg shadow-sm shadow-black">
+            
                     <div class="flex flex-col gap-2.5">
                         <h1 class="text-3xl font-bold">Finalizar pedido</h1>
                         <input type="text" id="planoEscolhido"
-                               class="text-sm text-yellow-400 font-bold border rounded-sm py-1 px-4 select-none" readonly>
+                            class="text-sm text-yellow-400 font-bold border rounded-sm py-1 px-4 select-none" readonly>
                     </div>
-    
-                    <div class="flex flex-col gap-2.5">
-                        <label class="text-sm">Nome no cartão</label>
-                        <input type="text" placeholder="Ex: João Silva"
-                               class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-yellow-400 placeholder:text-neutral-400">
-    
-                        <label class="text-sm">E-mail</label>
-                        <input type="text" placeholder="Ex: joao@gmail.com"
-                               class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-yellow-400 placeholder:text-neutral-400">
-    
-                        <p class="text-xs text-neutral-400">Enviaremos o recibo para este e-mail.</p>
-    
-                        <label class="text-sm">Número do cartão</label>
-                        <input type="text" maxlength="19" placeholder="1234 5678 9012 3456"
-                               class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-yellow-400 placeholder:text-neutral-400"
-                               id="cardNumber">
+            
+                    <div class="flex flex-col gap-4" id="formaPagamento">
+                        <label>Selecionar método de paagmento</label>
+                        <select name="select" id="select"
+                            class="border border-neutral-600 rounded-sm p-1 bg-[#1E1E1E] text-[#EAEAEA] outline-none font-bold">
+                            <option class="font-bold" hidden value="">Selecione</option>
+                            <option class="font-bold" value="card">Cartão de crédito</option>
+                            <option class="font-bold" value="pix">PIX</option>
+                            <option class="font-bold" value="boleto">Boleto bancário</option>
+                        </select>
                     </div>
-    
-                    <div>
-                        <div class="grid grid-cols-2 gap-12 items-center">
-    
-                            <div class="flex flex-col gap-1.5">
-                                <label class="text-sm">Validade (MM/AA)</label>
-                                <input type="text" maxlength="5" placeholder="09/32"
-                                    class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-yellow-400 placeholder:text-neutral-400"
-                                    id="validate">
+            
+                    <div class="hidden flex-col gap-6" id="box-card">
+                        <div class="flex flex-col gap-2.5">
+                            <label class="text-sm">Nome no cartão</label>
+                            <input type="text" placeholder="Ex: João Silva"
+                                class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-neutral-100 placeholder:text-neutral-400">
+            
+                            <label class="text-sm">E-mail</label>
+                            <input type="text" placeholder="Ex: joao@gmail.com"
+                                class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-neutral-100 placeholder:text-neutral-400">
+            
+                            <p class="text-xs text-neutral-400">Enviaremos o recibo para este e-mail.</p>
+            
+                            <label class="text-sm">Número do cartão</label>
+                            <input type="text" maxlength="19" placeholder="1234 5678 9012 3456"
+                                class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-neutral-100 placeholder:text-neutral-400"
+                                id="cardNumber">
+                        </div>
+            
+                        <div>
+                            <div class="grid grid-cols-2 gap-12 items-center">
+            
+                                <div class="flex flex-col gap-1.5">
+                                    <label class="text-sm">Validade (MM/AA)</label>
+                                    <input type="text" maxlength="5" placeholder="09/32"
+                                        class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-neutral-100 placeholder:text-neutral-400"
+                                        id="validate">
+                                </div>
+            
+                                <div class="flex flex-col gap-1.5">
+                                    <label class="text-sm">CVC</label>
+                                    <input type="text" maxlength="3" placeholder="123"
+                                        class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-neutral-100 placeholder:text-neutral-400">
+                                </div>
                             </div>
-    
-                            <div class="flex flex-col gap-1.5">
-                                <label class="text-sm">CVC</label>
-                                <input type="text" maxlength="3" placeholder="123"
-                                    class="border border-neutral-600 rounded-sm py-1.5 px-2 text-sm text-yellow-400 placeholder:text-neutral-400">
+                        </div>
+            
+                        <div class="flex w-full mt-4">
+                            <button type="submit"
+                                class="w-full py-2 text-lg text-black bg-yellow-400 font-bold rounded-lg cursor-pointer transition-transform duration-200">
+                                Confirmar Compra
+                            </button>
+                        </div>
+            
+                        <div class="hidden justify-center w-full">
+                            <p class="text-lg text-red-500 font-bold" id="warningMsg">Preencha todos os campos!</p>
+                        </div>
+                    </div>
+
+                    <!-- PIX -->
+                    <div class="hidden place-items-center" id="box-pix">
+                        <div class="flex flex-col gap-2.5 w-full">
+                            <label class="text-sm">Nome completo</label>
+                            <input
+                                type="text"
+                                maxlength="50"
+                                placeholder="Ex: João Silva"
+                                class="border border-neutral-700 rounded-sm p-1.5 outline-none focus:border-yellow-500">
+
+                            <label>E-mail</label>
+                            <input
+                                type="email"
+                                maxlength="50"
+                                placeholder="Ex: joao@gmail.com"
+                                class="border border-neutral-700 rounded-sm p-1.5 outline-none focus:border-yellow-500">
+
+                            <p class="text-xs text-green-700">Enviaremos o comprovante de pagamento para este e-mail.</p>
+                        
+
+                            <div class="flex w-full">
+                                <button
+                                    type="submit"
+                                    class="w-[50%] m-auto p-2 text-lg text-black bg-yellow-500 font-bold border-none rounded-sm cursor-pointer">
+                                    Gerar QR Code
+                                </button>
                             </div>
                         </div>
                     </div>
-    
-                    <div class="flex w-full mt-4">
-                        <button type="submit"
-                                class="w-full py-2 text-lg text-black bg-yellow-400 font-bold rounded-lg cursor-pointer transition-transform duration-200">
-                                Confirmar Compra
-                        </button>
+
+                    <!-- BOLETO -->
+                    <div class="hidden place-items-center" id="box-boleto">
+                        <div class="flex flex-col gap-4 w-full">
+                            <label>Nome completo</label>
+                            <input
+                                type="text"
+                                placeholder="Ex: João Silva"
+                                class="border border-neutral-700 rounded-sm p-1.5 focus:border-yellow-500 outline-none">
+
+                            <label>CPF</label>
+                            <input
+                                type="text"
+                                placeholder="000.000.000-00"
+                                class="border border-neutral-700 rounded-sm p-1.5 focus:border-yellow-500 outline-none">
+
+                            <label>E-mail</label>
+                            <input
+                                type="text"
+                                placeholder="Ex: joao@gmail.com"
+                                class="border border-neutral-700 rounded-sm p-1.5 focus:border-yellow-500 outline-none">
+
+                            <p class="text-xs text-green-700">Enviaremos o comprovante de pagamento para este e-mail.</p>
+                        
+
+                            <div class="flex w-full">
+                                <button
+                                    type="submit"
+                                    class="w-[50%] m-auto p-1.5 border-none rounded-sm text-black font-bold bg-yellow-500 text-lg cursor-pointer">
+                                    Gerar Boleto
+                                </button>
+                            </div>
+                        </div>
                     </div>
-    
-                    <div class="flex items-center gap-2 select-none">
-                        <p class="flex justify-center text-[8px] md:text-xs text-green-700">Nós usamos criptografia e não armazenamos dados reais nesta demo.</p>
-                        <i class="fa-solid fa-lock text-xs text-green-700"></i>
-                    </div>
-    
                 </div>
-            </div>
         </form>
     </main>
-
-    <script>
-        const params = new URLSearchParams(window.location.search)
-        const plano = params.get('plano')
-
-        document.getElementById('planoEscolhido').value = plano
-    </script>
-
 </body>
 </html>
